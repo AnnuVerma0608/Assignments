@@ -22,12 +22,20 @@ The other developer made changes to file(version 5) and push those changes to th
 
 7. How to resolve merge conflicts ?
 
-Answer:
+Answer: <<<<<<< HEAD
+ "Hello World!" This is my file
+=======
+"Hello World" This is my file and i am editing this file.
+>>>>>>> new_branch
 
+in the above code this ====== symbol is seperating my code with the other developer code with whom i have a merge conflict.  The code before ===== is your code and after ===== is other developers code , you just have to remove these special symbols,new_branch and head from the code to resolve the merge conflict.
 
+the resolved code below :
 
+"Hello World!" This is my file
 
+"Hello World" This is my file and i am editing this file.
 
-why commit message is important?
+8. why commit message is important?
 
-Answer : It helps to mintain a history of all the changes that have been made to the 
+Answer : It helps to mintain a history of all the changes that have been made to the local repository.  It helps the people who are working on the same file to know who made the changes to the code , when were they made and why were made.
