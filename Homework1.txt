@@ -6,5 +6,5 @@
 
 Pull : The Pull command not only fetches the new updates which have been made to the files but also merge those changes to files in the current working directory. After using  the Pull command the current working directory becomes updated and it is same as the remote working repository.
 
-
+Push : Push is used to push the commited changes in the local repository to the remote repository. it is used to update the remote repository with the commited changes at the remote repository.
 
