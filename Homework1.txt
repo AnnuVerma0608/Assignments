@@ -39,3 +39,15 @@ the resolved code below :
 8. why commit message is important?
 
 Answer : It helps to mintain a history of all the changes that have been made to the local repository.  It helps the people who are working on the same file to know who made the changes to the code , when were they made and why were made.
+ for example :
+
+Commit: a752c38eb64a8838a6c652dda9e0e341cbf42d9c [a752c38]
+Parents: 7e6c2194df
+Author: deepthiraavi <deepthiraavi00@gmail.com>
+Date: Friday, July 8, 2016 11:04:46 AM
+Hi this is an update
+
+
+from the above commit message we know that deepthi made the change to the code . she made it on july 8 and she made this change because she wanted to make an update.
+
+9.
