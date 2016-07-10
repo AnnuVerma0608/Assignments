@@ -8,3 +8,5 @@ Pull : The Pull command not only fetches the new updates which have been made to
 
 Push : Push is used to push the commited changes in the local repository to the remote repository. it is used to update the remote repository with the commited changes at the remote repository.
 
+commit : commit command just commit and save the chamges which you have made to the local 
+
