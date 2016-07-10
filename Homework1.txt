@@ -1,11 +1,33 @@
  Home Work 1 UI Class 1 -july 7-2016
 
 
- Fetch command :  The fetch command in Git is used to fetch all the changes that have been made to the remote repository , which are not present in your local working directory i.e it fetches all the updates made to the files after you made the last update.
+ 1.Fetch command :  The fetch command in Git is used to fetch all the changes that have been made to the remote repository , which are not present in your local working directory i.e it fetches all the updates made to the files after you made the last update.
 
 
-Pull : The Pull command not only fetches the new updates which have been made to the files but also merge those changes to files in the current working directory. After using  the Pull command the current working directory becomes updated and it is same as the remote working repository.
+2. Pull : The Pull command not only fetches the new updates which have been made to the files but also merge those changes to files in the current working directory. After using  the Pull command the current working directory becomes updated and it is same as the remote working repository.
 
-Push : Push is used to push the commited changes in the local repository to the remote repository. it is used to update the remote repository with the commited changes at the remote repository.
+3. Push : Push is used to push the commited changes in the local repository to the remote repository. it is used to update the remote repository with the commited changes at the remote repository. Push also chamges the current version of the file.
 
-commit : A new version of the file is 
+4.commit : It records the changes made to the local repository. It saves the latest changes made to the local repository . These changes can be referenced in the future.
+
+5. Difference between commit and push ?
+
+Answer: Commit just records the changes made to local repository.It just maintains  a history of the changes made to loacl repository and why they were made. Push pushes the changes made at the local repository tothe remote repository. It changes the version of that file at the remote repository. After pushing the changes a new version of the same file is craeted at the remote repository.
+
+6.How to create a merge conflict?
+
+ Answer : suppose you and some other developer are working on the same file and its version is version5.
+
+The other developer made changes to file(version 5) and push those changes to the remote repository a new version of the file has been created at the remote repository (version 6).You are still working on the version 5 and you don't pull the changes made to the version 5 by other developer and you  just start pushing your changes your changes to the remote repository. In that case a merge conflict will happen because the version of the file you updated is different from the file present at the remote repository.
+
+7. How to resolve merge conflicts ?
+
+Answer:
+
+
+
+
+
+why commit message is important?
+
+Answer : It helps to mintain a history of all the changes that have been made to the 
