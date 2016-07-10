@@ -1,0 +1,10 @@
+ Home Work 1 UI Class 1 -july 7-2016
+
+
+ Fetch command :  The fetch command in Git is used to fetch all the changes that have been made to the remote repository , which are not present in your local working directory i.e it fetches all the updates made to the files after you made the last update.
+
+
+Pull : The Pull command not only fetches the new updates which have been made to the files but also merge those changes to files in the current working directory. After using  the Pull command the current working directory becomes updated and it is same as the remote working repository.
+
+
+
