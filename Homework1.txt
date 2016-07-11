@@ -4,7 +4,7 @@
  1.Fetch command :  The fetch command in Git is used to fetch all the changes that have been made to the remote repository , which are not present in your local working directory i.e it fetches all the updates made to the files after you made the last update.
 
 
-2. Pull : The Pull command not only fetches the new updates which have been made to the files but also merge those changes to files in the current working directory. After using  the Pull command the current working directory becomes updated and it is same as the remote working repository.
+2. Pull : The Pull command not only fetches the new updates (which have been made to the files)from remote repository  but also merge those changes to files in the current working directory. After using  the Pull command the current working directory becomes updated and it is same as the remote working repository.
 
 3. Push : Push is used to push the commited changes in the local repository to the remote repository. it is used to update the remote repository with the commited changes at the remote repository. Push also chamges the current version of the file.
 
@@ -51,6 +51,8 @@ Hi this is an update
 from the above commit message we know that deepthi made the change to the code . she made it on july 8 and she made this change because she wanted to make an update.
  
 9. if you have a working copy and a file in that is modified and not commited , you need to pull the new changes . What steps you need to take?
+
+Answer: Suppose you have a working copy and you have modified the working copy and not commited it yet, and suddenly you realized that you have a new updated version of the file you modified at the remote repository, you want pull the changes before commiting so that you have updated copy , but you also want to keep a backup of your changes what you modified in the file . In this case you can use stash. Stashing takes the dirty state of your working directory — that is, your modified tracked files and staged changes — and saves it on a stack of unfinished changes that you can reapply at any time. (  definition taken from internet)
 
 10. Why it is good idea to pull before push?
 
