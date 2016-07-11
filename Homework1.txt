@@ -49,5 +49,14 @@ Hi this is an update
 
 
 from the above commit message we know that deepthi made the change to the code . she made it on july 8 and she made this change because she wanted to make an update.
+ 
+9. if you have a working copy and a file in that is modified and not commited , you need to pull the new changes . What steps you need to take?
 
-9.
+10. Why it is good idea to pull before push?
+
+Ans : It is always a good idea to pull before push , in this way you can avoid merge conflicts and moreover you will always have an updated copy of the file. You will always have the current version of the file to work on.
+
+11. why it is good idea to commit before you pull?
+
+Answer : suppose you have made a lot of changes to lot of changes to your local repository and suddenly after make the changes when you check the status using the status command or if you fetch the data you realize that a lot of changes are already made to the file in remote repository i.e the remote repository has already been update. you want to update the local repository according to remote repository but you also want your current changes in the local repository tobe saved somewhere.In that case you can first commit your changes and then pull the data from remote repository. In this way you can always refer to what changes you made to the file before pulling it from remote repository.
+
