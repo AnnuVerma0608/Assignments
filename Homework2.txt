@@ -7,8 +7,17 @@ Input Type: text : Input Type: text : <input type="text"> defines a one-line inp
 Input Type: password
 <input type="password"> <br>
 
-<input type="button"> <br>
+
+<input type="button" value="git button" width="100"> <br><br>
 <input type="checkbox"> <br>
+<input type="radio">
+
+there are different types of input attributes : the different types of input attributes provide more meaning to the input attribue 
+.
+example : 
+
+1. The value attribute specifies the initial value for an input field.  <input type="text" name="firstname" value="UIclassjuly7">
+2. The type attribue specifies what type of input will it take.
 
 
 
