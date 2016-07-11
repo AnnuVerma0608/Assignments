@@ -25,6 +25,11 @@ example :
 6. The maxlength attribute specifies the maximum allowed length for the input field <input type="text" name="firstname" value="UIclassjuly7" maxlength="12"> <br>
 7. The required attribute is a boolean attribute <input type="text" name="firstname" value="UIclassjuly7" required> <br> <input type="submit" name="button" value="submit">
 
+<br>
+
+there are many other input attributes. 
+ <br>
+
 
 
 
