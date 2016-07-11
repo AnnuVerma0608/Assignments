@@ -4,6 +4,12 @@ Input Type: text : Input Type: text : <input type="text"> defines a one-line inp
 
 <input type="text" name="texttype">
 
+Input Type: password
+<input type="password"> 
+
+<input type="button"> defines a button:
+
+
 
 
 2.what are semantic elements?
