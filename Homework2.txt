@@ -2,12 +2,13 @@
 
 Input Type: text : Input Type: text : <input type="text"> defines a one-line input field for text input:
 
-<input type="text" name="texttype">
+<input type="text" name="texttype"><br>
 
 Input Type: password
-<input type="password"> 
+<input type="password"> <br>
 
-<input type="button"> defines a button:
+<input type="button"> <br>
+<input type="checkbox"> <br>
 
 
 
