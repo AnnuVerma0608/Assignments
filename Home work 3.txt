@@ -78,7 +78,10 @@ it defines the footer for its nearest root element or parent element
 
  specifies additional details that the user can view or hide on demand. and this tag is currently supported only in few browsers such as Opera, Chrome, and in Safari 6.
 
-5.
+5.<figcaption>: it is text content tag. this is  used to provide a caption to the document.
+
+6. <figure> 
+
 
 
 
