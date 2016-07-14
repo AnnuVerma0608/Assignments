@@ -1,0 +1,65 @@
+Home work 3
+
+1. What is doctype and why it is used? 
+
+Answer : 
+
+document type definition : it is way of telling the browser what type of document it will be. eg : whether it will be an html document
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+here <!DOCTYPE HTML : this is the first part of the document type defintion it is way of telling the browser that it is an html document. (document declaration)
+PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" : this the public identifier. (document definition)
+
+
+Basically, if you have a doctype on your page it will help the web broswer to display your page according to the defined web standards but If there's no doctype, the browser might decide to display your page in "quirks mode", which was is now outdated which may break your code in certain ways.
+
+<!DOCTYPE> declaration refers to a DTD, because HTML 4.01 was based on SGML. The DTD specifies the rules for the markup language, so that the browsers render the content correctly.  In otherwords <!DOCTYPE> provides the browser what type oddocument it is , what are rules for the particular language used in this document and how it has to display it on the browser.
+
+
+The DOCTYPE tells the consuming user agent (web browsers, web crawlers, validation tools) what type of document the file is. reference :
+(http://stackoverflow.com/questions/414891/what-is-doctype)
+
+different document type declarations : reference ( http://www.w3schools.com/tags/tag_doctype.asp)
+
+1.<!DOCTYPE html>  // used in html 5 
+
+2 Strict : it allowes to use all the html elements and attibutes , except the prsetational elements like font , italics and bold and framesets are also not allowed (also not supported in html 5).
+
+example : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+3. Transitional :it allowes to use all the html elements and attibutes also the prsetational elements like font , italics and bold but framesets are  not allowed (also not supported in html 5).
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+4 Frameset : Transitional :it allowes to use all the html elements and attibutes also the prsetational elements like font , italics and bold and framesets are  also allowed (also not supported in html 5).
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+2,3,4 all three can used in html 4, and xhtml.
+
+What are semantic elements? 
+(<article>,<aside>,<details>,<figcaption>,<figure>,<footer>,<header>,<main>,<mark>,<nav>,<section>,<summary>,<time>)?
+
+
+Semantic elements are elements with a meaning.The readonly attribute specifies that the input field is read only
+
+A semantic element clearly describes its meaning to both the browser and the developer.
+
+Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+
+Examples of semantic elements: <form>, <table>, and <img> - Clearly defines its content.
+
+ (// source of information : http://www.w3schools.com/html/html5_semantic_elements.asp)
+
+
+Semantic HTML or semantic markup is HTML that introduces meaning to the web page rather than just presentation. For example, a <p> tag indicates that the enclosed text is a paragraph. This is both semantic and presentational, because people know what a “paragraph” is and browsers know how to display them. In HTML4* tags like <b> and <i> are not semantic, because they define only how the text should look (bold or italic) and do not provide any meaning to the text.
+
+Other examples of semantic HTML tags include the header tags <h1> through <h6>, <blockquote>, <code>, and <em>. And there are lots of other semantic HTML tags.
+
+The benefit of writing semantic HTML stems from the goal of a web page—to communicate. And by adding semantic tags to your documents, you are providing additional information about your document, which aids in communication.
+
+
+Semantic HTML tags provide information about the contents of those tags that goes beyond just how they look on a page.  (// source of information :http://
+
+webdesign.about.com/od/htmltags/a/why-semantic-html.htm)
