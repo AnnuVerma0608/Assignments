@@ -80,7 +80,36 @@ it defines the footer for its nearest root element or parent element
 
 5.<figcaption>: it is text content tag. this is  used to provide a caption to the document.
 
-6. <figure> 
+6. <figure> : it is self contained element , though it is related to the flow of the document , its position is indenpdent of the flow of the document.
+
+7. <header>: The HTML <header> element represents a group of introductory or navigational aids. It may contain some heading elements but also other elements like a logo, wrapped section's header.
+
+8. <main> : The <main> tag specifies the main content of a document.
+
+The content inside the <main> element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms.
+
+There must not be more than one <main> element in a document. The <main> element must NOT be a descendant of an <article>, <aside>, <footer>, <header>, or <nav> element.
+
+9. <mark> : its is used to highlight particular content of the text.
+
+10. <nav> : represents a section of a page that links to other pages or to parts within the page: a section with navigation links.
+
+
+example :
+
+<nav>
+<a href="/html/">HTML</a> |
+<a href="/css/">CSS</a> |
+<a href="/js/">JavaScript</a> |
+<a href="/jquery/">jQuery</a>
+</nav>
+
+here html ,css , js , jquery links to some other pages  i.e  they navigate to some other pages.
+
+11. <section> : If you want a particular part of a page separated from the rest of the page due to the information in it - its "content", use section elements (a generic section). 
+
+12 <summary> : Defines a visible heading for a <details> tag .
+
 
 
 
