@@ -110,6 +110,33 @@ here html ,css , js , jquery links to some other pages  i.e  they navigate to so
 
 12 <summary> : Defines a visible heading for a <details> tag .
 
+13. <time> : Element links a given content with a machine-readable translation. If the content is time- or date-related, the <time> must be used.
+
+ques 3 Why each semantic element is used and give a brief description on each of it? provide an example explaining the importance of using it in your example
+
+answer : Semantic HTML or semantic markup is HTML that introduces meaning to the web page rather than just presentation. For example, a <p> tag indicates that the enclosed text is a paragraph. This is both semantic and presentational, because people know what a “paragraph” is and browsers know how to display them. In HTML4* tags like <b> and <i> are not semantic, because they define only how the text should look (bold or italic) and do not provide any meaning to the text.
+
+Other examples of semantic HTML tags include the header tags <h1> through <h6>, <blockquote>, <code>, and <em>. And there are lots of other semantic HTML tags.
+
+The benefit of writing semantic HTML stems from the goal of a web page—to communicate. And by adding semantic tags to your documents, you are providing additional information about your document, which aids in communication.
+
+
+Semantic HTML tags provide information about the contents of those tags that goes beyond just how they look on a page.  (// source of information :http://
+
+webdesign.about.com/od/htmltags/a/why-semantic-html.htm)
+
+ Semantics within HTML is the practice of giving content on the page meaning and structure by using the proper element. Semantic code describes the value of content on a page, regardless of the style or appearance of that content. There are several benefits to using semantic elements, including enabling computers, screen readers, search engines, and other devices to adequately read and understand the content on a web page. Additionally, semantic HTML is easier to manage and work with, as it shows clearly what each piece of content is about.
+
+ Divisions, or <div>s, and <span>s are HTML elements that act as containers solely for styling purposes. As generic containers, they do not come with any overarching meaning or semantic value. Paragraphs are semantic in that content wrapped within a <p> element is known and understood as a paragraph. <div>s and <span>s do not hold any such meaning and are simply containers. 
+
+ reference (http://learn.shayhowe.com/html-css/getting-to-know-html)
+
+ ques 4  Differenciate each semantic element from other?
+
+ answer :
+
+
+
 
 
 
