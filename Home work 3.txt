@@ -133,7 +133,41 @@ webdesign.about.com/od/htmltags/a/why-semantic-html.htm)
 
  ques 4  Differenciate each semantic element from other?
 
- answer :
+ answer : different semantic elements were introduced in html 5 to Semantic elements are elements with a meaning. All the semantic elements such <article> <footer> 
+ are used for different purpose and provide meaning to the content of your page.
+
+5.  What are non-semantic elements give an example? what makes them different
+
+non-semantic elements: <div> and <span> <i> <b>- Tells nothing about its content. reference (w3 schools)
+
+they are just used for styling purpose and they do not provide any meaning to the content of the document . for example using <div> and <span> we can provide a structure to the documnent 
+
+A <div> is a block-level element that is commonly used to identify large groupings of content, and which helps to build a web page’s layout and design. A <span>, on the other hand, is an inline-level element commonly used to identify smaller groupings of text within a block-level element., but both these elements cannot provide meaning to content.
+
+6. Difference between semantic and non-semantic elements?
+
+Ans : semantic elements does not provide meaning to the content of the document. eg : <article> , <figure>.
+
+non semantic elements does not provide meaning to the content of the document : eg : <div> , <span>
+
+7. Difference between <article>,<section> and <div>?
+
+<section> means that the content inside is grouped (i.e. relates to a single theme), and should appear as an entry in an outline of the page.
+
+<div>, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
+
+The section element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.
+
+
+The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
+
+<article>  and <section>  are semantic elements where as <div> is non semantic elements
+
+reference : http://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div
+
+
+
+
 
 
 
