@@ -1,0 +1,141 @@
+Homework 4 :
+
+
+1. Display property in CSS :
+
+Block-level Elements : in all the block elements the display property is display is block by default i.e that means that it will always start with seperate line but you can always override the display property in javascript 
+
+Inline elements : in all the inline elements the display property is display is line  by default i.e that means that it will always come in the same line but you can always override the display property in javascript 
+
+Note :Setting the display property of an element only changes how the element is displayed, NOT what kind of element it is. So, an inline element with display: block; is not allowed to have other block elements inside it. (reference w3 schools)
+
+display : none : if you want to hide an element you can set its display property as none for example :
+
+h1.hidden {
+    display: none;
+}
+
+visibility:hidden; also hides an element.
+
+display : inline -block 
+
+You can create a grid of boxes that fills the browser width and wraps nicely. This has been possible for a long time using float, but now with inline-block it's even easier. inline-block elements are like inline elements but they can have a width and height. 
+
+.box {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+.after-box {
+  clear: left;
+}
+
+You can achieve the same effect using the inline-block value of the display 
+
+
+property..box2 {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+.box2 {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+
+reference : http://learnlayout.com/inline-block.html
+
+It has been possible for a long time to create a grid of boxes that fills the browser width and wraps nicely (when the browser is resized), by using the float property.
+
+However, the inline-block value of the display property makes this even easier.
+
+inline-block elements are like inline elements but they can have a width and a height.
+
+
+2. differences between display:none, and visibility : hidden
+
+Answer : display:none will not be available in the page and does not occupy any space. visibility:hidden hides an element, but it will still take up the same space as before. The element will be hidden, but still affect the layou
+
+display:none means that the tag in question will not appear on the page at all (although you can still interact with it through the dom). There will be no space allocated for it between the other tags.
+
+visibility:hidden means that unlike display:none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page.
+
+visibility: hidden hides the element, but it still takes up space in the layout. In other words, if you place a DIV and give it dimensions to take up 100x100 pixels, the visibility: hidden property will make the DIV not show on the screen, but the text following it will act like it's still there.
+
+display: none removes the element completely from the document. It does not take up any space, even though the HTML for it is still in the source code. In this example, the text following the DIV would move over as if the DIV had been removed from the HTML.
+
+reference : http://webdesign.about.com/od/css/f/blfaqhidden.htm
+
+The element will be hidden, but still affect the layout:
+
+
+3. what is inline css, internal css, external css, look into which one is better. which one is recommended way
+
+
+  1. Embedding CSS/ Internal CSS :
+
+You can also embed CSS rules directly into any HTML page. To do this you need to add the following code to the <head> of your HTML document
+
+style media="screen" type="text/css">
+
+Add style rules here
+
+</style>
+
+All of your CSS rules go between the style tags. 
+
+Advantages :
+
+1.  Because the CSS is part of the HTML document, the whole page exists as just one file. 
+2.  This can be useful if you are sending the page to someone via email or if it will be used as a template such as a blogger template.
+3.  liquid-layout demos so when people view the source of the page they can see the HTML and the CSS code together
+4.  advantage of using this method is with dynamic content. If you are using a database to generate the page content you can also generate dynamic styles at the same time
+5. it allows users to change these colours from an admin page without actually editing the CSS in their blog templates.
+
+disadvantage:
+
+1. styles must be downloaded every time someone visits the page, this can cause a slightly slower browsing experience
+
+  2. Inline CSS: 
+
+  Style rules can also be added directly to any HTML element. To do this you simply add a style parameter to the element and enter your style rules as the value. Here is an example of a heading with red text and a black background:
+
+  <h2 style="color:red;background:black;">This is a red heading with a black background</h2>
+
+  Advantage :
+
+  1. it is good way in which you can debug the code.
+
+ Disadvantage :
+
+  1. it will bloat your HTML and make website maintenance a real headache.
+
+
+  3. External CSS : With an external style sheet, you can change the look of an entire website by changing just one file
+
+  Each page must include a reference to the external style sheet file inside the <link> element. The <link> element goes inside the <head> section:
+
+
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+
+advantage :
+
+1. reusability
+
+disadvantage :
+
+1.  you will have a external dependency.
+
+best CSS is the external CSS as it be reused , it the best for the modular design that is for the application development. 
+
+2. internal style sheet is better for the static web pages.
+
