@@ -139,3 +139,64 @@ best CSS is the external CSS as it be reused , it the best for the modular desig
 
 2. internal style sheet is better for the static web pages.
 
+
+
+CSS Specificity:
+
+
+If two selectors apply to the same element, the one with higher specificity wins.
+
+it is similar to priority or precedence wins.
+
+inline has the highest specificity.
+
+Specificity determines, which CSS rule is applied by the browsers.
+Specificity is usually the reason why your CSS-rules don’t apply to some elements, although you think they should.
+Every selector has its place in the specificity hierarchy.
+If two selectors apply to the same element, the one with higher specificity wins.
+There are four distinct categories which define the specificity level of a given selector: inline styles, IDs, classes+attributes and elements.
+
+When selectors have an equal specificity value, the latest rule is the one that counts.
+When selectors have an unequal specificity value, the more specific rule is the one that counts.
+Rules with more specific selectors have a greater specificity.
+The last rule defined overrides any previous, conflicting rules.
+
+
+example : h1{
+	
+	color :blue;
+}
+
+ h1{
+	
+	color :yellow;
+}
+
+
+so here yellow will be applied because it's the latest.
+
+)
+The embedded style sheet has a greater specificity than other rules. (online)
+ID selectors have a higher specificity than attribute selectors.
+You should always try to use IDs to increase the specificity.
+
+A class selector beats any number of element selectors.
+The universal selector and inherited selectors have a specificity of 0, 0, 0, 0.
+
+
+
+
+reference : https://www.sitepoint.com/web-foundations/universal-selector-css-selector/ (universal selector defintion)
+
+
+
+predecence : reference : https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
+
+1. Inline styles (Presence of style in document).
+An inline style lives within your XHTML document. It is attached directly to the element to be styled. E.g. <h1 style="color: #fff;">
+2. IDs (# of ID selectors)
+ID is an identifier for your page elements, such as #div.
+3. Classes, attributes and pseudo-classes (# of class selectors).
+This group includes .classes, [attributes] and pseudo-classes such as :hover, :focus etc.
+4. Elements and pseudo-elements (# of Element (type) selectors).
+Including for instance :before and :after.
