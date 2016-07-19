@@ -76,3 +76,24 @@ for example:
 
 21 The :last-child selector matches every element that is the last child of its parent.
 
+22.  The :nth-last-child(n) selector matches every element that is the nth child, regardless of type, of its parent, counting from the last child.
+
+23. The :nth-of-type(n) selector matches every element that is the nth child, of a particular type, of its parent.
+
+24. The :only-child selector matches every element that is the only child of its parent.
+
+25. The :only-of-type selector matches every element that is the only child of its type, of its parent.
+
+26. The :root selector matches the document's root element. // which is html inhtml elements.
+
+27.The :target selector can be used to style the current active target element.
+
+28. The :valid selector selects form elements with a value that validates according to the element's settings.
+
+29. The * selector can also select all elements inside another element
+
+30. The .class selector selects elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character, followed by the name of the class
+
+31.The #id selector styles the element with the specified id.
