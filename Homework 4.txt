@@ -1,4 +1,4 @@
-Homework 4 :
+﻿Homework 4 :
 
 
 1. Display property in CSS :
@@ -200,3 +200,6 @@ ID is an identifier for your page elements, such as #div.
 This group includes .classes, [attributes] and pseudo-classes such as :hover, :focus etc.
 4. Elements and pseudo-elements (# of Element (type) selectors).
 Including for instance :before and :after.
+
+
+Specificity is the means by which browsers decide which CSS property values are the most relevant to an element and, therefore, will be applied.
