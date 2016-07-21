@@ -1,0 +1,125 @@
+ describe every pseudo class and pseudo elements and explain by an example.
+
+
+ What are Pseudo-classes?
+
+
+A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+Style an element when a user mouses over it  // w3school
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+Anchor Pseudo-classes :
+
+/* unvisited link */
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+// display :block // doubt  ask 
+
+Pseudo-classes can be combined with CSS classes:example: 
+
+
+1. The :first-child pseudo-class matches a specified element that is the first child of another element.
+
+example : p:first-child {
+    color: blue;
+}
+
+
+here the the selector matches any <p> element that is the first child of any element:
+
+
+2. the selector matches any <p> element that is the first child of any element
+
+A CSS pseudo-element is used to style specified parts of an element.
+
+
+p i:first-child {
+    color: blue;
+}
+
+<p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+<p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+
+here both the <i> will be the first child of both the <p> element.
+
+
+3. The :lang pseudo-class allows you to define special rules for different languages.
+
+
+<html>
+<head>
+<style>
+q:lang(no) {
+    quotes: "~" "~";
+}
+</style>
+</head>
+
+<body>
+<p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+</body>
+</html>
+
+output :
+
+Some text A quote in a paragraph Some text.
+
+In this example, :lang defines the quotation marks for q elements with lang="no":
+
+What are Pseudo-Elements? 
+
+
+pseudo-element is used to style specified parts of an element.
+
+
+Style the first letter, or line, of an element
+Insert content before, or after, the content of an element
+
+The Syntax of pseudo elements :
+
+selector::pseudo-element {
+    property:value;
+}
+
+example :
+
+The :: notation is used to differentiate the pseudo classes from pseudo elements // note 
+
+p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+
+the above pseudo eleemnt is used to add special style to the first line of the text.
+
+::first-line pseudo-element can only be applied to block-level elements. // note 
+
+
+Similar to pseudo classes the pseudo elements can be combined with CSS classes.
+
+p.intro::first-letter {
+    color: #ff0000;
+    font-size:200%;
+}
