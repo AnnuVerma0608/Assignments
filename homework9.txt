@@ -1,0 +1,74 @@
+centering in both horizontally and vertically a div using css ?
+
+CSS Layout - Horizontal & Vertical Align 
+
+In CSS, several properties can be used to align elements horizontally and vertically 
+
+To horizontally center a block element (like <div>), use margin: auto;
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+Try it Yourself »
+
+
+Center aligning has no effect if the width property is not set (or set to 100%).
+
+
+To just center the text inside an element, use text-align: c
+enter;
+
+
+.center {
+    text-align: center;
+    border: 3px solid green;
+}
+
+Center an Image
+To center an image, use margin: auto; and make it into a block element:
+
+img {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+
+
+One method for aligning elements is to use position: absolute;:  // doubt 
+
+
+Center Vertically - Using padding
+To center both vertically and horizontally, use padding and text-align: center:
+
+Another trick is to use the line-height property with a value that is equal to the height property.
+If padding and line-height is not an option, a third solution is to use positioning and the transform property
+
+
+center { 
+    height: 200px;
+    position: relative;
+    border: 3px solid green; 
+}
+
+.center p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+Try it Yourself »
+
+
+
+
+
+
+
+
+
+
+Preprocessing :
