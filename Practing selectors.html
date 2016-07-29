@@ -3,19 +3,36 @@
 		<title>Event Propogation : Event capturing and Event Bubling </title>
 	</head>
 	<body>
- <div id="divId" style="border:2px solid blue;">
+
+	<!--<div id="divId" style="border:2px solid blue;">
  <span> this is a span inside the div </span>
  <h1> this is heading for the para</h1><br>
 <p id="paraId" style="border:5px solid red;"> this is para  </p>
+</div> -->
+
+
+
+<div id="divId">
+<p>this is a para1 </p>p
+<p>this is a para1 </p>p
+<p>this is a para1 </p>p
+<p>this is a para1 </p>p
+
+<span> this is a span inside </span>
+<span> this is a span inside</span>
+<span> this is a span inside  </span>
+<span> this is a span inside  </span>
 </div>
-</body>
+
+
 <script type="text/javascript">
-	document.getElementById('divId').addEventListener('click' , function(event){
+
+		/*document.getElementById('divId').addEventListener('click' , function(event){
 		event.stopPropagation();
 		alert('you clicked on a div ')
 
-	},true)  /* with true it becomes defined that is event capturing that is first the parent event handler and then the child event handler else it will be undefinned nad it will be considered as event bubling which is the reverse first the child lement eventlistener and then the parent event listener appers ..  by defaultit is false the capture  flag value , therefore it eill be eventbubling by default always */
-	document.getElementById('paraId').addEventListener('click' , function(event){
+	},true) */ /* with true it becomes defined that is event capturing that is first the parent event handler and then the child event handler else it will be undefinned nad it will be considered as event bubling which is the reverse first the child lement eventlistener and then the parent event listener appers ..  by defaultit is false the capture  flag value , therefore it eill be eventbubling by default always */
+	/*document.getElementById('paraId').addEventListener('click' , function(event){
 		//event.stopPropagation(); // stop propogation
           //event.stopImmediatePropagation() //  it will stop the propagation of the immdeiate item that you clicked on para second time
 		alert('you clicked on a para ')
@@ -25,8 +42,33 @@
 	document.getElementById('paraId').addEventListener('click' , function(event){
 		alert('you clicked on a para second time')
 
+	}) */
+		
+
+
+	
+
+
+
+
+		document.getElementById('divId').addEventListener('click' , function(event){
+		if(event.target.tagname==='P') {
+			console.log(event.target.innerHTML); }
+			else if (event.target.tagname==='SPAN'){
+			console.log('you cliked on span click on paragraph')
+			}
+		
+
+
+
+
+
 	})
+
+
+
 </script>
+</body>
 
 
 </html>
