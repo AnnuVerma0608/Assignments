@@ -1,0 +1,137 @@
+W registered
+if (-1)
+
+
+a1 = true  && true   
+true
+a1 = ('') && true
+""
+a1 = ([]) && true
+true
+a1 = (undefined) && true
+undefined
+
+
+a1 = (undefined) || true
+true
+a1 = ("42") && true
+true
+a1 = ("42") && false
+false
+a1 = "42" && false
+false
+a1 = ("42") || false
+"42"
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !"Cat"             // !t returns false
+false
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !""           
+true
+VM170:1 Uncaught SyntaxError: Unexpected end of input
+if (-1) { console.log('i am true')
+VM217:1 Uncaught SyntaxError: Unexpected end of input
+if (-1) { console.log('i am true'); }
+VM224:1 i am true
+undefined
+if (0) { console.log('i am true'); }
+undefined
+if (NaN) { console.log('i am true'); }
+undefined
+if ({}) { console.log('i am true'); }
+VM235:1 i am true
+undefined
+if ([]) { console.log('i am true'); }
+VM244:1 i am true
+undefined
+if (4) { console.log('i am true'); }
+VM255:1 i am true
+undefined
+if (foo) { console.log('i am true'); }
+VM266:1 Uncaught ReferenceError: foo is not defined(…)(anonymous function) @ VM266:1
+if ("") { console.log('i am true'); }
+undefined
+if ("foo") { console.log('i am true'); }
+VM276:1 i am true
+undefined
+if ("new Date()") { console.log('i am true'); }
+VM314:1 i am true
+undefined
+if ("new  anu") { console.log('i am true'); }
+VM317:1 i am true
+undefined
+if ("new  anu()") { console.log('i am true'); }
+VM318:1 i am true
+undefined
+function logTruthiness (val) {
+    if (val) {
+        console.log("Truthy!");
+    } else {
+        console.log("Falsy.");
+    }
+}
+undefined
+// Outputs: "Truthy!"
+logTruthiness(true);
+
+// Outputs: "Truthy!"
+logTruthiness({});
+
+// Outputs: "Truthy!"
+logTruthiness([]);
+
+// Outputs: "Truthy!"
+logTruthiness("some string");
+
+// Outputs: "Truthy!"
+logTruthiness(3.14);
+
+// Outputs: "Truthy!"
+logTruthiness(new Date());
+VM323:3 Truthy!
+VM323:3 Truthy!
+VM323:3 Truthy!
+VM323:3 Truthy!
+VM323:3 Truthy!
+VM323:3 Truthy!
+undefined
+
+
+a1 = true  && true   
+true
+a1 = ('') && true
+""
+a1 = ([]) && true
+true
+a1 = (undefined) && true
+undefined
+
+
+a1 = (undefined) || true
+true
+a1 = ("42") && true
+true
+a1 = ("42") && false
+false
+a1 = "42" && false
+false
+a1 = ("42") || false
+"42"
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !"Cat"             // !t returns false
+false
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !""           
+true

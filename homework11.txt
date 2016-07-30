@@ -1,0 +1,431 @@
+JavaScript Has Dynamic Types:
+
+
+JavaScript has dynamic types. This means that the same variable can be used as different types:
+
+1. Strings
+A string (or a text string) is a series of characters like "John Doe".
+
+Strings are written with quotes. You can use single or double quotes:
+
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string:
+
+var answer = "It's alright";             // Single quote inside double quotes
+var answer = "He is called 'Johnny'";    // Single quotes inside double quotes
+var answer = 'He is called "Johnny"';    // Double quotes inside single quotes
+
+2. Numbers :
+
+JavaScript has only one type of numbers.
+
+Numbers can be written with, or without decimals:
+
+var x1 = 34.00;     // Written with decimals
+var x2 = 34;        // Written without decimals
+
+3. Boolean :
+
+
+JavaScript Booleans
+Booleans can only have two values: true or false.
+
+
+4. Arrays :
+
+ JavaScript arrays are written with square brackets.
+
+Array items are separated by commas. 
+
+e.g : Array indexes are zero-based, which means the first item is [0], second is [1], and so on.
+
+
+5. Ojects:
+
+JavaScript objects are written with curly braces.
+
+Object properties are written as name:value pairs, separated by commas.
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+
+
+
+The typeof Operator
+You can use the JavaScript typeof operator to find the type of a JavaScript variable:
+
+Example
+typeof "John"                // Returns "string" 
+typeof 3.14                  // Returns "number"
+typeof false                 // Returns "boolean"
+typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
+typeof {name:'John', age:34} // Returns "object"
+
+
+
+The typeof operator returns "object" for arrays because in JavaScript arrays are objects.   // important
+
+7. Undefined
+In JavaScript, a variable without a value, has the value undefined. The typeof is also undefined.
+
+Example
+var person;                  // Value is undefined, type is undefined
+
+Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
+
+Example
+person = undefined;          // Value is undefined, type is undefined
+
+Empty Values
+An empty value has nothing to do with undefined.
+
+An empty string variable has both a value and a type.
+
+Example
+var car = "";                // The value is "", the typeof is "string"  it is not undefined
+
+8. Null
+
+In JavaScript null is "nothing". It is supposed to be something that doesn't exist.
+
+Unfortunately, in JavaScript, the data type of null is an object.
+
+You can consider it a bug in JavaScript that typeof null is an object. It should be null.  //note important
+
+You can empty an object by setting it to null:
+
+Example
+var person = null;           // Value is null, but type is still an object
+Try it Yourself »
+You can also empty an object by setting it to undefined:
+
+Example
+var person = undefined;     // Value is undefined, type is undefined
+Try it Yourself »
+
+
+
+2. Difference Between Undefined and Null:
+
+
+undefined means that the variable has not been declared, or has not been given a value. null is a special object because typeof null returns 'object'. The value of a variable with no value is undefined (i.e., it has not been initialized). Variables can be emptied by setting their value to null // google 
+
+typeof undefined             // undefined
+typeof null                  // object
+null === undefined           // false
+null == undefined            // true
+
+null === undefined // false
+ null == undefined // true
+ null === null // true
+and
+
+ null = 'value' // ReferenceError
+ undefined = 'value' // 'value'
+
+
+ 3. difference between == and === ?
+
+ both are comparison operators :
+
+ ==	equal and ===	equal value and equal type 
+
+ The = (assigment operator) , == and === (relational operator) please explain the diffenerce between these 3 operators in javascript;along with relevant examples.And what do we mean by type type conversion in===
+
+
+ By using = you assign a value to something.
+
+x = 1 //x now equals 1
+x = 2 //x now equals 2
+By using == you check if something is equal to something else. This is not strict
+
+x == 1 //is x equal to 1? (False)
+x == 2 //is x equal to 2? (True)
+true == 1 //does the boolean value of true equal 1? (True)
+By using === you check if something is equal to something else. This is also strict.
+
+x === 1 //is x equal to 1? (False)
+x === 2 //is x equal to 2? (True)
+true === 1 //does the boolean value of true equal 1? (False)
+
+
+4 . how to include javascript into web pages / different ways of including java script?
+
+
+The <script> element
+JavaScript is embedded into HTML and XHTML documents using the <script> element. This element can be used to embed the JavaScript directly into the web page (also known as inline), or to specify an external file that contains the JavaScript.
+
+The <script> element is used with a number of attributes:
+
+defer - used to inform the browser that the script associated with this <script> element generates content (in other words the document.write() method is used). This can be either true or false. The default setting (i.e. if this is not specified) is false.
+language - This argument is used to announce the version of JavaScript that is contained within the corresponding <script> elements. This argument is now deprecated.
+src- Specifies URL of an external file containing the JavaScript. This argument overrides any JavaScript contained within the body of this <script> element.
+type - Indicates to the browser the type of content contained within the <script> body. This is typically be set to "text/javascript".
+As with most HTML elements the <script> body must always be terminated with the </script> element.
+
+A typical use of the <script> element when embedding the script directly into an HTML file might appear as follows:
+
+<script type="text/javascript">
+// JavaScript code goes here
+</script>
+An example of using an external file to contain the JavaScript is as follows:
+
+HTML file:
+
+<script src="/j-scripts/myjscript.js" type="text/javascript">
+</script>
+
+1.
+Linking an external script
+
+Usually, you'll be writing scripts in their own .js files. If you want to execute a .js script from your webpage, just use <script> with an src attribute pointing to the script file, using its URL:
+
+<script src="path/to/my/script.js"></script>
+
+2. You may also add JavaScript code between <script> tags rather than providing an src attribute.
+
+<script>
+window.addEventListener('load', function () {
+  console.log('This function is executed once the page is fully loaded');
+});
+</script>
+
+3.The HTML <noscript> Element defines a section of html to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser. // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript
+
+
+
+
+
+5.why do we use javascript ?
+
+
+The main use of Javascript is that it allows you to make things happen in the user's browser without sending messages back and forth to the server. There are a variety of reasons why you might want to do this.
+
+For example, sending a message to the server and getting a reply is a relatively long process: it is almost always a noticable time lag, and can take many seconds. Doing something directly in the browser can be much faster. So if, for example, you want to give the user an "invalid data" message of some sort, it can be much faster if it comes from Javascript.
+
+In the same vein, with Javascript you can validate field-by-field rather than waiting until the user has completely filled out the screen and clicked a submit button. For example, suppose you present the user with a screen where he's supposed to enter transaction dates and monetary amounts. The user enters a whole screen full of these -- maybe 20 or 30 transactions -- and then clicks submit. If the user attempts to type dates in a format that you don't recognize, say typing day/month/year when you expected year-month-day, then with Javascript you could give him an error on the first unrecognizable date. With a round trip to the server, he'd have typed in a whole screen-full of invalid dates before you tell him he's doing it wrong.
+
+
+reasons :
+
+JavaScript is very easy to implement. All you need to do is put your code in the HTML document and tell the browser that it is JavaScript.
+JavaScript works on web users’ computers — even when they are offline!
+JavaScript allows you to create highly responsive interfaces that improve the user experience and provide dynamic functionality, without having to wait for the server to react and show another page.
+JavaScript can load content into the document if and when the user needs it, without reloading the entire page — this is commonly referred to as Ajax.
+JavaScript can test for what is possible in your browser and react accordingly — this is called Principles of unobtrusive JavaScript or sometimes defensive scripting.
+JavaScript can help fix browser problems or patch holes in browser support — for example fixing CSS layout issues in certain browsers. // doubt in few.
+
+
+what is DOM and  DOM manipulation?
+
+To respond to user events, we wrote event handlers to modify HTML elements on the page.
+
+jQuery comes with several useful methods to modify HTML elements
+
+The DOM is basically an API you use to interface the document with, and is available in many languages as a library ( JS is one of those languages ). The browser converts all the HTML in your web page to a tree based on the nesting. Pop open Firebug and look at the HTML structure. That is the tree I'm talking about.
+
+If you want to change any HTML you can interact with the DOM API in order to do so.
+
+<html>
+ <head><script src="file.js"></script></head>
+ <body>blah</body>
+</html>
+In file.js I can reference the body using:
+
+onload = function() {
+    document.getElementsByTagName('body')[0].style.display='none';
+}
+The getElementsByTagName is a method of the document object. I am manipulating the body element, which is a DOM element. If I wanted to traverse and find say, a span I can do this:
+
+onload = function() {
+ var els = document.getElementsByTagName('*');
+ for ( var i = els.length; i--; ) {
+    if ( els[i].nodeType == 1 && els[i].nodeName.toLowerCase() == 'span' ) {
+       alert( els[i] )
+    }
+ }
+}    // doubt 
+I am traversing the nodeList given back by getElementsByTagName in the snippet above, and looking for a span based on the nodeName property.
+
+
+best practices in javascript ?
+
+
+Minimize the use of global variables.
+
+This includes all data types, objects, and functions.
+
+Global variables and functions can be overwritten by other scripts.
+
+Use local variables instead, and learn how to use closures.
+
+Use === Comparison
+The == comparison operator always converts (to matching types) before comparison.
+
+The === operator forces comparison of values and type
+
+it is a good coding practice to initialize variables when you declare them.
+
+Beware that numbers can accidentally be converted to strings or NaN (Not a Number).
+
+Undefined values can break your code. It is a good habit to assign default values to arguments.
+
+NaN === NaN;        // false  // important
+Number.NaN === NaN; // false
+isNaN(NaN);         // true
+isNaN(Number.NaN);  // true
+
+function valueIsNaN(v) { return v !== v; }
+valueIsNaN(1);          // false
+valueIsNaN(NaN);        // true
+valueIsNaN(Number.NaN); // true
+
+This function returns true if the value equates to NaN. Otherwise it returns false.
+
+what are falsy values ?
+
+
+A falsy value is a value that translates to false when evaluated in a Boolean context.
+
+Examples of falsy values in JavaScript 
+
+
+if (false)
+if (null)
+if (undefined)
+if (0)
+if (NaN)
+if ('')
+if ("")
+if (document.all) [1]
+
+Truthy values ?
+
+In JavaScript, a truthy value is a value that translates to true when evaluated in a Boolean context. All values are truthy unless they are defined as falsy (i.e., except for false, 0, "", null, undefined, and NaN).
+
+
+if (true)
+if ({})
+if ([])
+if (42)
+if ("foo")
+if (new Date())
+
+examples
+
+
+
+function logTruthiness (val) {
+    if (val) {
+        console.log("Truthy!");
+    } else {
+        console.log("Falsy.");
+    }
+}
+
+// Outputs: "Truthy!"
+logTruthiness(true);
+
+// Outputs: "Truthy!"
+logTruthiness({});
+
+// Outputs: "Truthy!"
+logTruthiness([]);
+
+// Outputs: "Truthy!"
+logTruthiness("some string");
+
+// Outputs: "Truthy!"
+logTruthiness(3.14);
+
+// Outputs: "Truthy!"
+logTruthiness(new Date());  // val is just the parameter that is passed 
+
+
+there are only 6 Fasly values in javascript.
+
+// Outputs: "Falsy."
+logTruthiness(false);
+
+// Outputs: "Falsy."
+logTruthiness(null);
+
+// Outputs: "Falsy."
+logTruthiness(undefined);
+
+// Outputs: "Falsy."
+logTruthiness(NaN);
+
+// Outputs: "Falsy."
+logTruthiness(0);
+
+// Outputs: "Falsy."
+logTruthiness("");
+
+
+
+Logical AND (&&)	expr1 && expr2	Returns expr1 if it can be converted to false; otherwise, returns expr2. Thus, when used with Boolean values, && returns true if both operands can be converted to true; otherwise, returns false.
+
+Logical OR (||)	expr1 || expr2	Returns expr1 if it can be converted to true; otherwise, returns expr2. Thus, when used with Boolean values, || returns true if either operand can be converted to true; if both can be converted to false, returns false.
+
+Logical OR (||)	expr1 || expr2	Returns expr1 if it can be converted to true; otherwise, returns expr2. Thus, when used with Boolean values, || returns true if either operand can be converted to true; if both can be converted to false, returns false.
+
+
+examples :
+
+a1 = true  && true      // t && t returns true
+a2 = true  && false     // t && f returns false
+a3 = false && true      // f && t returns false
+a4 = false && (3 == 4)  // f && f returns false
+a5 = "Cat" && "Dog"     // t && t returns "Dog"
+a6 = false && "Cat"     // f && t returns false
+a7 = "Cat" && false     // t && f returns false
+false
+
+
+a1 = true  && true   
+true
+a1 = ('') && true
+""
+a1 = ([]) && true
+true
+a1 = (undefined) && true
+undefined
+
+
+a1 = (undefined) || true
+true
+a1 = ("42") && true
+true
+a1 = ("42") && false
+false
+a1 = "42" && false
+false
+a1 = ("42") || false
+"42"
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !"Cat"             // !t returns false
+false
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !""           
+true
+
+
+n1 = !true              // !t returns false
+n2 = !false             // !f returns true
+n3 = !(null)
+true
+
+a1 = ({}) || true
+Object {}
+a1 = ([]) || true
+[]
+a1 = (new anu()) || true
+VM788:1 Uncaught ReferenceError: anu is not defined(…)(anonymous function) @ VM788:1
+a1 = ("annu") || true
+"annu"
