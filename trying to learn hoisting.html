@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log(func2()); 
+			console.log(func3);
+			function func1() {
+				console.log('func1 is excuted')
+			}
+			(function(){
+				console.log('iife executed'); // imeditaley invoked
+			})();
+			console.log(a); // undefined
+			var a =6;
+			console.log(a); //
+			(function(){
+				// child scope will have more preference if declared
+				// suppose if you declare a 
+				// it will not consider any thing from the parent scope
+				console.log(a); // undefined
+				var a=30;
+				console.log(a);
+			})();
+			console.log(a);
+			function func2(){ // complte function will be hoisted
+				//console.log(a);
+console.log(b);
+				var b = 40;
+				//return b;
+				//return 20;
+
+				//console.log(b);
+			};
+			var func3 = function() { // only the varaible declared is hoisted not assigment
+				console.log('func3 executed')
+			} 
+			func2.prototype.someFunction = function(){
+				
+			}
+		</script>
+	</body>
+</html>
