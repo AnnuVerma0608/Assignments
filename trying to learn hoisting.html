@@ -4,7 +4,22 @@
 		<title></title>
 	</head>
 	<body>
+	<p id="demo"></p>
 		<script type="text/javascript">
+		//x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+
+//var x; // Declare x
+//var x = 5;  // Initialize x
+
+elem = document.getElementById("demo");            // Find an element
+elem.innerHTML = "x is " + x + " and y is " + y;    // Display x and y
+
+var y = 7;  // Initialize y
+var x = 5;
+//var y = 7;  // Initialize y  this will give an error y is not defined
 			console.log(func2()); 
 			console.log(func3);
 			function func1() {
