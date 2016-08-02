@@ -1,0 +1,119 @@
+jQuery -- Its a java Script library
+
+C -- programming --- # include<stdio.h>
+
+<script src="fileName.js"></script>
+
+some times you can even download js files from the internet as well  -- cdn 
+
+<script src="http://website.com/fileName.js"></script> --> download from internet and included
+
+which jquery version to use ? --> depending on browser support use the respective versions file.
+
+jQuery Versions
+
+1.x
+	-- supported on all browsers (i.e 6,7,8, 9, .....)
+2.x
+	-- supported after i.e 9 only.
+3.x
+
+
+Development version (jquery.js) -- More file size
+					-- loading time more
+					-- bad for performance
+					-- lot of comments, easy to understand
+					-- lot of space
+					-- meaning ful names
+
+production verison (jquery.min.js)-- less file size
+					-- loading time is less
+					-- good for performance
+					-- not easy to understand
+					-- smaller and minified names
+
+Downloading and including jquery 
+
+<!-- regular way of including jquery -->
+		<script type="text/javascript" src="jquery-3.0.0.js"></script>
+
+using jQuery CDN 
+
+
+
+You may use jQuery in you web page 
+
+by using jQuery 
+
+or $ -- symbol
+
+Selectors
+Event Handler Methods
+AJAX
+
+jquery Selectors 
+
+Selection by ID
+
+jQuery('#idName')
+$('#idName')
+
+Selection by class name
+
+jQuery('.className')
+$('.className')
+
+selection by tag Name
+
+jQuery('tagName')
+$('tagName')
+
+multiple selectors in jQuery
+
+jQuery('selector1, selector2')
+
+both selectors on same element
+
+jQuery('selector1Selector2');
+
+
+Attribute based selections in jQuery
+
+	jQuery('[attributeName]')
+
+	all the elements with attributeName will be selected
+
+	jQuery('[attributeName=attributeValue]')
+
+	all the elements with attributeName and matching atrribute value will be selected
+
+	jQuery('[attributeName^=StartingAttributeValue]') --> ^=
+
+	all the elements with attributeName and starting atrribute value will be selected
+
+	jQuery('[attributeName$=endingAttributeValue]') --> $=
+
+	all the elements with attributeName and ending atrribute value will be selected	
+
+	jQuery('[attributeName*=endingAttributeValue]') --> *=
+
+	all the elements with attributeName and sub-string atrribute value will be selected	
+
+
+	using these selectors we can select elements based on the criteria.
+
+
+	Basic Selectors
+		https://api.jquery.com/category/selectors/basic-css-selectors/
+	Attribute Selectors
+		https://api.jquery.com/category/selectors/attribute-selectors/
+
+
+homework 
+Subject : UIClass May 15 Home Work 22 <name>
+
+1) Look Basic filters and Child filters
+2) when to use which jQuery Selectors
+3) look to all jQuery selectors 
+	-- https://api.jquery.com/category/selectors --> on left hand --> find selectors --> select a particular selector find example of usage.
+
