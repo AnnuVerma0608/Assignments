@@ -21,14 +21,59 @@
 		<span>This is span 5</span> <br/>
 
 		The input with no type : <input > <br/>
-		The input with type = text : <input type="text"> <br/>
+		The input with type = text : <input type="text" value="female" name="female"> <br/>
 		The input with type = date : <input type="date"> <br/>
 		The input with type = number : <input type="number"> <br/>
-		The input with type = radio : <input type="radio"> <br/>
-		The input with type = checkbox : <input type="checkbox"> <br/>
-		The input with type = no attribute value : <input type> <br/>
+		The input with type = radio : <input type="radio" value="female"> <br/>
+		The input with type = checkbox : <input type="ctext" name="female"> <br/>
+		The input with type = no attribute value : <input type name> <br/>
+		<input name="newsletter">
+<input name="milkman">
+<input name="jobletter">
+
+
+//////////////////////////////////////////////////////////////////////////////////////output///////////////////////////////////////////////////////////////////
+
+var q = 7555.899 + 5.333;
+undefined
+var b;
+undefined
+var b = 67.8 + 5.333;
+undefined
+console.log(b);
+VM154:1 73.133
+undefined
+isNaN(b);
+false
+var s =wijk/0.700
+VM202:1 Uncaught ReferenceError: wijk is not defined(…)(anonymous function) @ VM202:1
+var s ='d'/1234
+undefined
+console.log(s);
+VM256:1 NaN
+undefined
+typeof(s);
+"number"
+j
+VM306:1 Uncaught ReferenceError: j is not defined(…)(anonymous function) @ VM306:1
+jQuery('p').css('border', 1px solid red ;);
+VM381:1 Uncaught SyntaxError: missing ) after argument list
+jQuery('p').css('border', '1px solid red ');
+[<p style=​"border:​ 1px solid red;​">​This is para 1​</p>​, <p id=​"paraId" class=​"class2" style=​"border:​ 1px solid red;​">​This is para 2​</p>​, <p style=​"border:​ 1px solid red;​">​This is para 3​</p>​, <p class=​"class1" style=​"border:​ 1px solid red;​">​This is para 4​</p>​, <p style=​"border:​ 1px solid red;​">​This is para 5​</p>​]
+jQuery('#paraId').css('border', '1px solid green');
+[<p id=​"paraId" class=​"class2" style=​"border:​ 1px solid green;​">​This is para 2​</p>​]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		<!-- jQuery CDN -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.js"></script>
+
+
+
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.js">
+		$( "input[name$='letter']" ).val( "a letter" );   // here that input should have name and a letter is the value that input will have
+
+		</script>
 
 	</body>
 </html>
