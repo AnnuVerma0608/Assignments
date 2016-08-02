@@ -19,18 +19,27 @@ elem.innerHTML = "x is " + x + " and y is " + y;    // Display x and y
 
 var y = 7;  // Initialize y
 var x = 5;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //var y = 7;  // Initialize y  this will give an error y is not defined
 			console.log(func2()); 
 			console.log(func3);
+
 			function func1() {
 				console.log('func1 is excuted')
 			}
+
 			(function(){
 				console.log('iife executed'); // imeditaley invoked
 			})();
+
 			console.log(a); // undefined
 			var a =6;
+
 			console.log(a); //
+
 			(function(){
 				// child scope will have more preference if declared
 				// suppose if you declare a 
@@ -40,6 +49,8 @@ var x = 5;
 				console.log(a);
 			})();
 			console.log(a);
+			
+
 			function func2(){ // complte function will be hoisted
 				//console.log(a);
                  console.log(b);
@@ -51,9 +62,13 @@ var x = 5;
 
 				//console.log(b);
 			};
+
 			var func3 = function() { // only the varaible declared is hoisted not assigment
 				console.log('func3 executed')
-			} 
+			}
+
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 			func2.prototype.someFunction = function(){
 				
 			}

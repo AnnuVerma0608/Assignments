@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>This is para 1</p>
+		<p id="paraId" class="class2">This is para 2</p>
+		<p>This is para 3</p>
+		<p class="class1">This is para 4</p>
+		<p id="para5">This is para 5</p>
+		<div class="class2">This is div 1</div>
+		<div class="class1 class2">This is div 2</div>
+		<div>This is div 3</div>
+		<div>This is div 4</div>
+		<div>This is div 5</div>
+		<span class="class1">This is span 1</span>
+		<span>This is span 2</span>
+		<span class="class2">This is span 3</span>
+		<span>This is span 4</span>
+		<span>This is span 5</span> <br/>
+
+		<button onclick="myFunction()">Try it</button>
+
+
+
+		The input with no type : <input > <br/>
+		The input with type = text : <input type="text" value="female" name="female"> <br/>
+		The input with type = date : <input type="date"> <br/>
+		The input with type = number : <input type="number"> <br/>
+		The input with type = radio : <input type="radio" value="female"> <br/>
+		The input with type = checkbox : <input type="ctext" name="female"> <br/>
+		The input with type = no attribute value : <input type name> <br/>
+
+
+		<p id="demo">Click the button to change the color of this paragraph.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+
+
+		<input name="newsletter">
+<input name="milkman">
+<input name="jobletter">
+
+<script>
+function myFunction() {
+    var x = document.getElementById("paraId");
+    x.style.color = "red";
+}
+</script>
+</body>
+</html>
+
+
+selectors :
+
+1. The getElementById() method returns the element that has the ID attribute with the specified value.
+
+This method is one of the most common methods in the HTML DOM, and is used almost every time you want to manipulate, or get info from, an element on your document.
+
+Returns null because it is just a single element if no elements with the specified ID exists.
+
+An ID should be unique within a page. However, if more than one element with the specified ID exists, the getElementById() method returns the first element in the source code.
+
+document.getElementById('paraId2');   // null because we are selecting just one ElementById
+null
+document.getElementsByTagName('hr')   // empty array because we are selecting elements .
+[]
+document.getElementById('paraId')
+<p id=​"paraId" class=​"class2">​This is para 2​</p>​
+document.getElementById('para5')
+<p id=​"para5">​This is para 5​</p>​
+
+
+document.getElementById('para5').length   // length property will not work with Id because its just a single element 
+undefined
+
+
+2.  The getElementsByClassName() : method returns a collection of all elements in the document with the specified class name, as a NodeList object.
+
+The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
+
+Tip: You can use the length property of the NodeList object to determine the number of elements with a specified class name, then you can loop through all elements and extract the info you want.
+
+
+
+document.getElementsByClassName('class1class2')
+[]
+document.getElementsByClassName('class1 class2')
+[<div class=​"class1 class2">​This is div 2​</div>​]
+document.getElementsByClassName('class1')
+[<p class=​"class1">​This is para 4​</p>​, <div class=​"class1 class2">​This is div 2​</div>​, <span class=​"class1">​This is span 1​</span>​]
+document.getElementsByClassName('class1 ,class2')
+[]
+document.getElementsByClassName('class1' ,class2')
+VM286:1 Uncaught SyntaxError: Invalid or unexpected token
+document.getElementsByClassName('class1' ,'class2')
+[<p class=​"class1">​This is para 4​</p>​, <div class=​"class1 class2">​This is div 2​</div>​, <span class=​"class1">​This is span 1​</span>​]
+document.getElementsByClassName('class1''class2')
+VM288:1 Uncaught SyntaxError: missing ) after argument list
+
+length property :  document.getElementsByClassName('class1').length;
+3
+document.getElementsByClassName('class2').length;
+4
+document.getElementsByClassName('class7').length;
+0
+document.getElementsByClassName('class2')[0];
+<p id=​"paraId" class=​"class2">​This is para 2​</p>​
+document.getElementsByClassName('class2')[4];
+undefined
+document.getElementsByClassName('class2')[3];
+<span class=​"class2">​This is span 3​</span>​
+
+
+
+3. The getElementsByTagName() method returns a collection of all elements in the document with the specified tag name, as a NodeList object.
+
+The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
+
+Tip: The parametervalue "*" returns all elements in the document.
+
+Tip: You can use the length property of the NodeList object to determine the number of elements with the specified tag name, then you can loop through all elements and extract the info you want.
+
+
+document.getElementsByTagName('p');
+[<p>​This is para 1​</p>​, <p id=​"paraId" class=​"class2">​This is para 2​</p>​, <p>​This is para 3​</p>​, <p class=​"class1">​This is para 4​</p>​, <p id=​"para5">​This is para 5​</p>​, <p id=​"demo">​Click the button to change the color of this paragraph.​</p>​, <p id=​"â€‹"paraId"" class=​"â€‹"class2"">​â€‹This is para 2â€‹​</p>​, <p id=​"â€‹"para5"">​â€‹This is para 5â€‹​</p>​]
+document.getElementsByTagName('p').length;
+8
+document.getElementsByTagName('div').length
+5
+document.getElementsByTagName('div')
+[<div class=​"class2">​This is div 1​</div>​, <div class=​"class1 class2">​This is div 2​</div>​, <div>​This is div 3​</div>​, <div>​This is div 4​</div>​, <div>​This is div 5​</div>​]
+document.getElementsByTagName('hr');
+
+
+4. The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+
+Note: The querySelector() method only returns the first element that matches the specified selectors. To return all the matches, use the querySelectorAll() method instead.
+
+If the selector matches an ID in document that is used several times (Note that an "id" should be unique within a page and should not used more than once), it returns the first matching element.
+
+
+ment.getElementById('para5').length
+undefined
+document.querySelector(hr);
+VM707:1 Uncaught ReferenceError: hr is not defined(…)(anonymous function) @ VM707:1
+document.querySelector('hr');
+null
+document.querySelector('div');
+<div class=​"class2">​This is div 1​</div>​
+document.querySelector('paraId');
+null
+document.querySelector('para5');
+null
+document.querySelector('#para5');
+<p id=​"para5">​This is para 5​</p>​
+document.querySelector('#paraId');
+<p id=​"paraId" class=​"class2">​This is para 2​</p>​
+document.querySelector('.class1');
+<p class=​"class1">​This is para 4​</p>​
+document.querySelector('class1');
+null
+
+
+5. The querySelectorAll() method returns all elements in the document that matches a specified CSS selector(s), as a static NodeList object.
+
+The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
+
+Tip: You can use the length property of the NodeList object to determine the number of elements that matches the specified selector, then you can loop through all elements and extract the info you want.
+
+
+document.querySelectorAll('class1');
+[]
+document.querySelectorAll('.class1');
+[<p class=​"class1">​This is para 4​</p>​, <div class=​"class1 class2">​This is div 2​</div>​, <span class=​"class1">​This is span 1​</span>​]
+document.querySelectorAll('.class2');
+[<p id=​"paraId" class=​"class2">​This is para 2​</p>​, <div class=​"class2">​This is div 1​</div>​, <div class=​"class1 class2">​This is div 2​</div>​, <span class=​"class2">​This is span 3​</span>​]
+document.querySelectorAll('.class2').length;
+4
+document.querySelectorAll('.class2class1').length;
+0
+document.querySelectorAll('.#paraId').length;
+VM776:1 Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document': '.#paraId' is not a valid selector.(…)(anonymous function) @ VM776:1
+document.querySelectorAll('paraId').length;
+0
+document.querySelectorAll('p').length;
+22
