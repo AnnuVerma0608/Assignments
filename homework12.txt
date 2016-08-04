@@ -48,6 +48,15 @@ function myFunction() {
     var x = document.getElementById("paraId");
     x.style.color = "red";
 }
+
+
+
+console.log(1);
+			console.log(2);
+			setTimeout(function(){console.log(3)},100);
+			setTimeout(function(){console.log(4)},0); // asynchrnous --> after current script executed it will be called.
+			console.log(5);
+			console.log(6);
 </script>
 </body>
 </html>
