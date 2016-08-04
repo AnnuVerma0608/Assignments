@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+		
+			var arrA = ['my', 'name is anu', 'I ', 'like', 'to', 'listen', 'music'];
+
+			var cars = ["Saab", "Volvo", "BMW"];
+		</script>
+	</body>
+</html>
+
+
+
+
+1. sort method :
+
+
+arrA.sort;
+sort() { [native code] }
+arrA.sort();
+["I ", "like", "listen", "music", "my", "name is anu", "to"]
+cars.sort();
+["BMW", "Saab", "Volvo"]
+
+
+2. length property : The length property returns the number of elements
+arrA.length;
+7
+
+cars.length
+3
+
+
+ 
+3.push method : It is the easiest way to add element to an array.
+
+
+an item is added at the end of the array 
+
+
+cars.push('Audi');
+4
+cars.push('sonata');
+5
+cars
+["BMW", "Saab", "Volvo", "Audi", "sonata"]
+arrA.push(' I am music lover');
+8
+arrA;
+["I ", "like", "listen", "music", "my", "name is anu", "to", " I am music lover"]
+
+
+also length property can be used to push the elemnents .
+
+cars[cars.length] = ' Honda civic ' ;
+" Honda civic "
+cars[cars.length] = " Honda civic " ;
+" Honda civic "
+cars;
+["BMW", "Saab", "Volvo", "Audi", "sonata", " Honda civic ", " Honda civic "]
+cars[11] = " infinity";
+" infinity"
+cars
+["BMW", "Saab", "Volvo", "Audi", "sonata", " Honda civic ", " Honda civic ", undefined × 4, " infinity"]
+
+
+
+
+4.   In JavaScript, arrays use numbered indexes.  
+
+In JavaScript, objects use named indexes.
+
+Array.isArray(array);  // used to check whether a particular oject is an object or an array
+
+Array.isArray(cars);
+true
+Array.isArray(arrA);
+true
+
+
+instanceof operator returns true if an object is created by a given constructor   //   doubt 
+
+
+5. toString() Method : converts array to string .
+
+
+ toString() converts an array to a
+ string of (comma separated) array values.
+
+ cars.toString();
+"Saab,Volvo,BMW"
+
+
+
+6 The join() method also joins all array elements into a string.
+The pop() method removes the last element from an array:
+
+
+
+cars.join();
+"Saab,Volvo,BMW"
+cars.join('-')
+"Saab-Volvo-BMW"
+
+its just like toString() method you can also add seperator to it.
+
+7. The pop() method removes the last element from an array:
+
+cars.pop();
+"BMW"
+cars
+["Saab", "Volvo"]
+
+
+
+
+
+8. The push() method adds a new element to an array (at the end):
+cars.push('Audi');
+4
+cars.push('sonata');
+5
+cars
+["BMW", "Saab", "Volvo", "Audi", "sonata"]
+arrA.push(' I am music lover');
+8
+arrA;
+["I ", "like", "listen", "music", "my", "name is anu", "to", " I am music lover"]
+
+
+
+9. The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+arrA.shift();
+"my"
+arrA
+["name is anu", "I ", "like", "to", "listen", "music"]
+
+
+
+10. The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+
+
+arrA.unshift('hello');
+7
+arrA
+["hello", "name is anu", "I ", "like", "to", "listen", "music"]arrA.unshift('hey');
+8
+arrA;
+["hey", "hello", "name is anu", "I ", "like", "to", "listen", "music"]
+arrA.unshift('hey');
+8
+arrA;
+["hey", "hello", "name is anu", "I ", "like", "to", "listen", "music"]
+
+
+11 . Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete:
+
+Using delete may leave undefined holes in the array. Use pop() or shift() instead.
+
+
+delete arrA[1];
+true
+arraA[1];
+VM640:1 Uncaught ReferenceError: arraA is not defined(…)(anonymous function) @ VM640:1
+arraA[0;];
+VM649:1 Uncaught SyntaxError: Unexpected token ;
+arrA;
+["hey", undefined × 1, "name is anu", "I ", "like", "to", "listen", "music"]
+
+
+12. The splice() method can be used to add new items to an array:
+
+fruits.splice(2, 0, "Lemon", "Kiwi");
+
+
+The first parameter (2) defines the position where new elements should be added (spliced in).
+
+The second parameter (0) defines how many elements should be removed.
+
+The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+
+example : arrA;
+["my", "name is anu", "I ", "like", "to", "listen", "music"]
+arrA.splice(2,1,"Annu");
+["I "]
+arraA;
+VM752:1 Uncaught ReferenceError: arraA is not defined(…)(anonymous function) @ VM752:1
+arrA;
+["my", "name is anu", "Annu", "like", "to", "listen", "music"]
+
+["Saab", "Volvo", "BMW"]
+cars.splice(1,1,'yww','uwuw','js');
+["Volvo"]
+cars
+["Saab", "yww", "uwuw", "js", "BMW"]
+
+13.  The concat() method creates a new array by concatenating two arrays: 
+
+var r = cars.concat(arrA);
+undefined
+r;
+["Saab", "yww", "uwuw", "js", "BMW", "my", "name is anu", "I ", "like", "to", "listen", "music"]
+
+cars.concat(arrA);
+["Saab", "yww", "uwuw", "js", "BMW", "my", "name is anu", "I ", "like", "to", "listen", "music"]
+
+
+14. The slice() method can take two arguments like slice(1,3).
+
+The method then selects elements from the start argument, and up to (but not including) the end argument.
+
+
+arrA;
+["my", "name is anu", "I ", "like", "to", "listen", "music"]
+arrA.slice(1,5);
+["name is anu", "I ", "like", "to"]
+arrA.slice(2,5)
+["I ", "like", "to"]
+arrA.slice(2);
+["I ", "like", "to", "listen", "music"]
+
+15. The reverse() method reverses the elements in an array.
+
+arrA.reverse();
+["music", "listen", "to", "like", "I ", "name is anu", "my"]
+
+16. The lastIndexOf() method searches the array for the specified item, and returns its position.
+
+The search will start at the specified position, or at the end if no start position is specified, and end the search at the beginning of the array.
+
+Returns -1 if the item is not found.
+
+arrA.lastIndexOf('u');
+-1
+
+
+arrA.lastIndexOf('Annu');
+-1
+arrA.lastIndexOf('Anu');
+-1
+arrA.lastIndexOf('I');
+-1
+arrA;
+["my", "name is anu", "I ", "like", "to", "listen", "music"]
+arrA.splice(2,1,"Annu");
+["I "]
+arrA.lastIndexOf('Annu');
+2
+arrA.splice(4,0,"Annu");
+[]
+arrA.lastIndexOf('Annu');
+4
+
+
+16. arr.forEach(function(item, index, arr){}) 
+	-- for every item in the arr the function will be executed
+	-- item -- item 
+	-- index -- index
+	-- arr -- complete array reference
+
+arr.map(function(item, index, arr){
+	return //some info
+}) 
+	-- for every item in the arr the function will be executed
+	-- item -- item 
+	-- index -- index
+	-- arr -- complete array reference
+	-- this will create a new array out of returned values. 
+
+
+	function logArrayElements(element, index, array) {
+  console.log('a[' + index + '] = ' + element);
+}
+
+// Notice that index 2 is skipped since there is no item at
+// that position in the array.
+[2, 5, , 9].forEach(logArrayElements);
+VM609:2 a[0] = 2
+VM609:2 a[1] = 5
+VM609:2 a[3] = 9
+undefined
+
+
+function logArrayElements(element, index, array) {
+  console.log('a[' + index + '] = ' + element);
+}
+
+// Notice that index 2 is skipped since there is no item at
+// that position in the array.
+[2, 5, , 9].forEach(logArrayElements);
+VM609:2 a[0] = 2
+VM609:2 a[1] = 5
+VM609:2 a[3] = 9
+undefined
+var number = [8,9,10,11]; 
+undefined
+number.forEach(logArrayElements);
+VM609:2 a[0] = 8
+VM609:2 a[1] = 9
+VM609:2 a[2] = 10
+VM609:2 a[3] = 11
+undefined     //  its just like a for loop , you define a function instaed to traverse the elements
+
+
+17. The indexOf() method searches the array for the specified item, and returns its position.
+
+The search will start at the specified position, or at the beginning if no start position is specified, and end the search at the end of the array.
+
+Returns -1 if the item is not found.
+
+If the item is present more than once, the indexOf method returns the position of the first occurence.
+
+Note: The first item has position 0, the second item has position 1, and so on.
+
+
+arrA.indexOf('I');
+-1
+arrA.indexOf('i');
+-1
+arrA.indexOf('my');
+0
+
+18. The map() method creates a new array with the results of calling a function for every array element.
+
+The map() method calls the provided function once for each element in an array, in order.
+
+Note: map() does not execute the function for array elements without values.
+
+Note: map() does not change the original array.
+
+
+19. reduce right method in javascript.
+
+The reduceRight() method reduces the array to a single value.
+
+The reduceRight() method executes a provided function for each value of the array (from right-to-left).
+
+The return value of the function is stored in an accumulator (result/total).
+
+Note: reduceRight() does not execute the function for array elements without values
+
+
+20. The valueOf() method returns the array.
+
+This method is the default method of the array object. Array.valueOf() will return the same as Array
+
+Note: This method will not change the original array.
+
+arrA.valueOf();
+while(condition) {
+	//stmts
+}
+
+untill the condition is true the stmts keep on executed 
+if the contion fails then it will stop executing stmts
+
+var i = 0;
+while(i<10) {
+	console.log(i);
+	i++;
+}
+
+do{
+	stmts;
+}while(condition)
+
+diff between do while loop and while loop
+
+--> the first it executes the statments and then it starts checking for condition from second time
+
+var i =0; 
+do{
+	console.log(i);
+	i++;
+}while(i<10);
+
+for (initialization (1); condition (2)(5)..; increment (4)(7)) {
+	stmts(3)(6);
+}
+
+function func1() {
+	console.log('function executed');
+}
+
+
+switch in java script:
+
+Use the switch statement to select one of many blocks of code to be executed.
+
+Syntax
+switch(expression) {
+    case n:
+        code block
+        break;
+    case n:
+        code block
+        break;
+    default:
+        default code block
+}
+This is how it works:
+
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
