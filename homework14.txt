@@ -1,0 +1,344 @@
+oobject creation :
+
+Using an Object Literal :
+
+his is the easiest way to create a JavaScript Object.
+
+Using an object literal, you both define and create an object in one statement.
+
+An object literal is a list of name:value pairs (like age:50) inside curly braces {}.
+
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+undefined
+person;
+Object {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
+
+
+Using the JavaScript Keyword new 
+
+
+var person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+var student = new object();
+student.name ="Annu";
+student.id  = 1;
+student.grade ="five" ;
+
+
+var student = new object();
+student.name ="Annu";
+student.id  = "1";
+student.grade ="five" ;
+VM3941:1 Uncaught ReferenceError: object is not defined(…)(anonymous function) @ VM3941:1
+var student = new object();
+student.name ="Annu";
+student.id  = 1;
+student.grade ="five" ;
+VM3942:1 Uncaught ReferenceError: object is not defined(…)(anonymous function) @ VM3942:1
+var student = new Object();
+student.name ="Annu";
+student.id  = 1;
+student.grade ="five" ;
+"five"
+student;
+Object {name: "Annu", id: 1, grade: "five"}
+
+
+3. Using an Object Constructor
+
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+Try it yourself »
+
+VM19717:9 Uncaught SyntaxError: Unexpected identifier
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+undefined
+myfather;
+VM20115:1 Uncaught ReferenceError: myfather is not defined(…)(anonymous function) @ VM20115:1
+myFather;
+person {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe",, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+VM20227:7 Uncaught SyntaxError: Unexpected token ,
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe", "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+undefined
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe", "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+undefined
+myFather;
+person {firstName: "John", lastName: "Doe", age: "blue", eyeColor: undefined}
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe",, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+VM20617:7 Uncaught SyntaxError: Unexpected token ,
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe",, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+VM20693:7 Uncaught SyntaxError: Unexpected token ,
+
+
+Using hasOwnProperty to test for a property's existence:
+
+o = new Object();
+o.prop = 'exists';
+
+function changeO() {
+  o.newprop = o.prop;
+  delete o.prop;
+}
+
+o.hasOwnProperty('prop');   // returns true
+changeO();
+o.hasOwnProperty('prop');   // returns false
+
+
+
+o = new Object();
+o.prop = 'exists';
+
+function changeO() {
+  o.newprop = o.prop;
+  delete o.prop;
+}
+
+o.hasOwnProperty('prop');   // returns true
+changeO();
+o.hasOwnProperty('prop');   // returns false
+false
+o = new Object();
+o.prop = 'exists';
+
+function changeO() {
+  o.newprop = o.prop;
+  
+}
+
+o.hasOwnProperty('prop');   // returns true
+changeO();
+o.hasOwnProperty('prop');   // returns false
+true
+
+
+Object.keys() returns an array whose elements are strings corresponding to the enumerable properties found directly upon object. The ordering of the properties is the same as that given by looping over the properties of the object manually.
+
+console.log(Object.keys(person));
+VM32107:1 ["firstName", "lastName", "age", "eyeColor"]
+undefined
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+undefined
+console.log(Object.keys(person));
+VM32107:1 ["firstName", "lastName", "age", "eyeColor"]
+undefined
+
+
+You can add new properties to an existing object by simply giving it a value.
+
+var student = new Object();
+student.name ="Annu";
+student.id  = 1;
+student.grade ="five" ;
+
+"five"
+student.freind = "saumya";
+"saumya"
+student;
+Object {name: "Annu", id: 1, grade: "five", freind: "saumya"}
+
+
+here the friend property is added to the student.
+
+
+The delete keyword deletes a property from an object:
+
+var student = new Object();
+student.name ="Annu";
+student.id  = 1;
+student.grade ="five" ;
+
+"five"
+student.freind = "saumya";
+"saumya"
+student;
+Object {name: "Annu", id: 1, grade: "five", freind: "saumya"}
+delete student.friend
+true
+student.friend;
+undefined
+delete student.friend;
+true
+
+
+modify property :  you can simply modify the property of an object by :
+
+person.age =80;
+80
+person;
+Object {firstName: "John", lastName: "Doe", age: 80, eyeColor: "blue"}
+
+
+Every JavaScript object has a prototype. The prototype is also an object.
+
+All JavaScript objects inherit their properties and methods from their prototype.
+
+JavaScript Prototypes
+All JavaScript objects inherit the properties and methods from their prototype.
+
+Objects created using an object literal, or with new Object(), inherit from a prototype called Object.prototype.
+
+Objects created with new Date() inherit the Date.prototype.
+
+The Object.prototype is on the top of the prototype chain.
+
+All JavaScript objects (Date, Array, RegExp, Function, ....) inherit from the Object.prototype.
+
+Sometimes you want to add new properties (or methods) to an existing object.
+
+Sometimes you want to add new properties (or methods) to all existing objects of a given type.
+
+Sometimes you want to add new properties (or methods) to an object prototype.
+
+
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.nationality = "English";
+
+
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.nationality = "English";
+
+not possible
+
+
+
+sometimes you want to customise the properties of an ojbect during run time the prototype property of javacript allows you to do that.
+
+it  also enables object inheritance in javascript.
+
+
+https://www.youtube.com/watch?v=pu08qQCmw8I
+
+JavaScript is a class-free, object-oriented language, and as such, it uses prototypal inheritance instead of classical inheritance. This can be puzzling to programmers trained in conventional object-oriented languages like C++ and Java.
+
+
+var a = {a: 1}; 
+// a ---> Object.prototype ---> null
+
+var b = Object.create(a);
+// b ---> a ---> Object.prototype ---> null
+console.log(b.a); // 1 (inherited)
+
+var c = Object.create(b);
+// c ---> b ---> a ---> Object.prototype ---> null
+
+var d = Object.create(null);
+// d ---> null
+console.log(d.hasOwnProperty); 
+// undefined, because d doesn't inherit from Object.prototype
+VM469:6 1
+VM469:13 undefined
+undefined
+b.a;
+1
+c.a;
+1
+d.a;
+undefined
+var a = {a: 1}; 
+// a ---> Object.prototype ---> null
+
+var b = Object.create(a);
+// b ---> a ---> Object.prototype ---> null
+console.log(b.a); // 1 (inherited)
+
+var c = Object.create(b);
+// c ---> b ---> a ---> Object.prototype ---> null
+
+var d = Object.create(c);
+// d ---> null
+console.log(d.hasOwnProperty); 
+// undefined, because d doesn't inherit from Object.prototype
+VM491:6 1
+VM491:13 hasOwnProperty() { [native code] }
+undefined
+d.a
+1
