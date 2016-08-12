@@ -1,0 +1,107 @@
+<html>
+
+<body>
+
+<script type="text/javascript">
+	/*var p1 = {
+		name : 'javascript' , age : 34 ,
+		height : 182 ,
+		weight : 179,
+		/*getName : function(){
+			return this.name;
+		} */
+	//}
+		/*p1.prototype.getName = function(){
+			return this.name;
+
+	};
+	console.log(p1.getName()); 
+  var newFunc = p1.getName;
+console.log(newFunc()); */
+
+/*function data(age ,height, weight ){
+	this.name = 'javascript'  ;
+	this.age = age ;
+	this.weight = weight ;
+	this.height = height ;
+
+
+} */
+//data.prototype.name= 'javascript';
+/*data.prototype.getName = function() {
+	return  this.name ;
+	} */
+
+/*var p1 = new  data('this.name',35,45,5);
+
+console.log(p1.name); 
+  var newFunc = p1.name;
+console.log(newFunc); 
+
+
+ // var newFunc = Object.create(data.prototype);
+
+//console.log(newFunc); */
+
+	var p1 = {
+		name : 'javascript' , age : 34 ,
+		height : 182 ,
+		weight : 179,
+		getName : function(){
+			return this.name;
+		} 
+	}
+		/*p1.prototype.getName = function(){
+			return this.name; 
+
+	}; */
+	console.log(p1.getName()); 
+
+  var newFunc = p1.getName.bind(p1); //creates a new anonymous function for you binded with the context passed in as a parameter , using bind you created a function with a psrticular context
+  var newfunc1 = p1.getName.call(p1);
+var newfunc2 = p1.getName.apply(p1);
+   //  call just calls the function  returns a string 
+  console.log(typeof(newFunc));
+  console.log(typeof(newfunc1));
+  console.log(typeof(newfunc2));
+
+
+
+//console.log(newFunc.call(p1));  
+   // using the call method the function will be invoked and javscript will be printed.
+
+console.log(newFunc());
+console.log(newfunc1);
+console.log(newfunc2);
+
+
+var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+    
+      
+}
+
+
+var e = myObject.fullName;
+console.log (e.call(myObject));
+
+var mObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this ;
+    
+      
+}}
+
+console.log (mObject.fullName());
+
+
+
+</script>
+</body>
+</html>

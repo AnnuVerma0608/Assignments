@@ -1,0 +1,254 @@
+<html>
+
+<body>
+
+<script type="text/javascript">
+	/*var p1 = {
+		name : 'javascript' , age : 34 ,
+		height : 182 ,
+		weight : 179,
+		/*getName : function(){
+			return this.name;
+		} */
+	//}
+		/*p1.prototype.getName = function(){
+			return this.name;
+
+	};
+	console.log(p1.getName()); 
+  var newFunc = p1.getName;
+console.log(newFunc()); */
+
+/*function data(age ,height, weight ){
+	this.name = 'javascript'  ;
+	this.age = age ;
+	this.weight = weight ;
+	this.height = height ;
+
+
+} */
+//data.prototype.name= 'javascript';
+/*data.prototype.getName = function() {
+	return  this.name ;
+	} */
+
+/*var p1 = new  data('this.name',35,45,5);
+
+console.log(p1.name); 
+  var newFunc = p1.name;
+console.log(newFunc); 
+
+
+ // var newFunc = Object.create(data.prototype);
+
+//console.log(newFunc); */
+
+	var p1 = {
+		name : 'javascript' , age : 34 ,
+		height : 182 ,
+		weight : 179,
+		getName : function(){
+			return this.name;
+		} 
+	}
+		/*p1.prototype.getName = function(){
+			return this.name; 
+
+	}; */
+	console.log(p1.getName()); 
+
+  var newFunc = p1.getName.bind(p1); //creates a new anonymous function for you binded with the context passed in as a parameter , using bind you created a function with a psrticular context
+  var newfunc1 = p1.getName.call(p1);
+var newfunc2 = p1.getName.apply(p1);
+   //  call just calls the function  returns a string 
+  console.log(typeof(newFunc));
+  console.log(typeof(newfunc1));
+  console.log(typeof(newfunc2));
+
+
+
+//console.log(newFunc.call(p1));  
+   // using the call method the function will be invoked and javscript will be printed.
+
+console.log(newFunc());
+console.log(newfunc1);
+console.log(newfunc2);
+
+
+var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+    
+      
+}
+
+
+var e = myObject.fullName;
+console.log (e.call(myObject));
+
+var mObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this ;
+    
+      
+}}
+
+console.log (mObject.fullName());
+
+
+
+</script>
+</body>
+</html>
+
+
+You have already learned that the code inside a JavaScript function will execute when "something" invokes it.
+
+The code in a function is not executed when the function is defined. It is executed when the function is invoked.
+
+Some people use the term "call a function" instead of "invoke a function".
+
+It is also quite common to say "call upon a function", "start a function", or "execute a function".
+
+In this tutorial, we will use invoke, because a JavaScript function can be invoked without being called.
+
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction(10, 2);  //this is  global function
+
+
+The function above does not belong to any object. But in JavaScript there is always a default global object.
+
+In HTML the default global object is the HTML page itself, so the function above "belongs" to the HTML page.
+
+In a browser the page object is the browser window. The function above automatically becomes a window function.
+
+myFunction() and window.myFunction() is the same function:
+
+var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+document.getElementById("demo").innerHTML = myObject.fullName();
+
+function myFunction(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName  = arg2;
+}
+Both methods take an owner object as the first argument. The only difference is that call() takes the function arguments separately, and apply() takes the function arguments in an array.
+
+In JavaScript strict mode, the first argument becomes the value of this in the invoked function, even if the argument is not an object.
+
+In "non-strict" mode, if the value of the first argument is null or undefined, it is replaced with the global object.
+
+With call() or apply() you can set the value of this, and invoke a function as a new method of an existing object.
+// This	creates a new object
+var x = new myFunction("John","Doe");
+x.firstName;     
+
+A constructor invocation creates a new object. The new object inherits the properties and methods from its constructor.
+
+The this keyword in the constructor does not have a value.
+The value of this will be the new object created when the function is invoked.
+
+Both methods take an owner object as the first argument. The only difference is that call() takes the function arguments separately, and apply() takes the function arguments in an array.
+
+In JavaScript strict mode, the first argument becomes the value of this in the invoked function, even if the argument is not an object.
+
+In "non-strict" mode, if the value of the first argument is null or undefined, it is replaced with the global object.
+
+With call() or apply() you can set the value of this, and invoke a function as a new method of an existing object.
+Both methods take an owner object as the first argument. The only difference is that call() takes the function arguments separately, and apply() takes the function arguments in an array.
+
+In JavaScript strict mode, the first argument becomes the value of this in the invoked function, even if the argument is not an object.
+
+In "non-strict" mode, if the value of the first argument is null or undefined, it is replaced with the global object.
+
+With call() or apply() you can set the value of this, and invoke a function as a new method of an existing object.   // important very
+
+myArray = [10, 2];
+myObject = myFunction.apply(myObject, myArray); 
+
+myObject = myFunction.call(myObject, 10, 2);     // Will return 20
+
+
+very JavaScript object has a prototype. The prototype is also an object.
+
+All JavaScript objects inherit their properties and methods from their prototype.
+
+JavaScript Prototypes
+All JavaScript objects inherit the properties and methods from their prototype.
+
+Objects created using an object literal, or with new Object(), inherit from a prototype called Object.prototype.
+
+Objects created with new Date() inherit the Date.prototype.
+
+The Object.prototype is on the top of the prototype chain.
+
+All JavaScript objects (Date, Array, RegExp, Function, ....) inherit from the Object.prototype.
+
+Sometimes you want to add new properties (or methods) to an existing object.
+
+Sometimes you want to add new properties (or methods) to all existing objects of a given type.
+
+Sometimes you want to add new properties (or methods) to an object prototype.
+
+
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.nationality = "English";
+
+
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.nationality = "English";
+
+not possible
+
+
+
+executing code. Consider this example:
+    var person = {
+    firstName: "Penelope",
+    lastName: "Barrymore",
+    fullName: function () {
+        ​// Notice we use "this" just as we used "he" in the example sentence earlier?:​
+        console.log(this.firstName + " " + this.lastName);
+    ​// We could have also written this:​​
+        console.log(person.firstName + " " + person.lastName);
+    }
+}
+If we use person.firstName and person.lastName, as in the last example, our code becomes ambiguous. Consider that there could be another global variable (that we might or might not be aware of) with the name “person.” Then, references to person.firstName could attempt to access the fistName property from the person global variable, and this could lead to difficult-to-debug errors. So we use the “this” keyword not only for aesthetics (i.e., as a referent), but also for precision; its use actually makes our code more unambiguous, just as the pronoun “he” made our sentence more clear. It tells us that we are referring to the specific John at the beginning of the sentence.
+
+Just like the pronoun “he” is used to refer to the antecedent (antecedent is the noun that a pronoun refers to), the this keyword is similarly used to refer to an object that the function (where this is used) is bound to. The this keyword not only refers to the object but it also contains the value of the object. Just like the pronoun, this can be thought of as a shortcut (or a reasonably unambiguous substitute) to refer back to the object in context (the “antecedent object”). We will learn more about context later.
+
+JavaScript’s this Keyword Basics
+
+First, know that all functions in JavaScript have properties, just as objects have properties. And when a function executes, it gets the this property—a variable with the value of the object that invokes the function where this is used.
