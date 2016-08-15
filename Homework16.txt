@@ -1,0 +1,79 @@
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+y = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); 
+elem.innerHTML = y;                     
+
+var y; // Declare x
+</script>
+
+</body>
+</html>
+
+JavaScript only hoists declarations, not initializations.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<p id="demo"></p>
+
+		<script type="text/javascript"> *
+x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+
+var x; // Declare x
+		
+			console.log(func2());// In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared.
+			console.log(func3);
+			function func1() {
+				console.log('func1 is excuted')
+			}
+			(function(){
+				console.log('iife executed'); // imeditaley invoked
+			})();
+			console.log(a); // undefined
+			var a =6;
+			console.log(a); //
+			(function(){
+				// child scope will have more preference if declared
+				// suppose if you declare a 
+				// it will not consider any thing from the parent scope
+				console.log(a); // undefined
+				var a=30;
+				console.log(a);
+			})();
+			console.log(a);
+			function func2(){ // complte function will be hoisted
+				var b =30;
+				return b;
+				//return 20;
+
+			};
+			var func3 = function() { // only the varaible declared is hoisted not assigment
+				console.log('func3 executed')
+			} 
+			func2.prototype.someFunction = function(){
+				
+			}
+		</script>
+	</body>
+</html>
