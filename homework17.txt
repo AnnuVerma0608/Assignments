@@ -1,0 +1,237 @@
+Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event. The event propagation mode determines in which order the elements receive the event.
+
+With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+Capturing is also called "trickling", which helps remember the propagation order:
+
+trickle down, bubble up // important 
+
+
+If there are two elements element 1 and element 2 . element 2 is inside element 1 and we attach an event with both the elements lets say onClick. Now when we click on element 2 then eventHandler for both the elements will be executed. Now here the question is in which order the event will execute. If the event attached with element 1 executes it is called event capturing and if the event attached with element 2 executes first this is called event bubbling. As per W3C the event will start in the capturing phase untill it reaches the target comes back to the element and then it starts bubbling
+
+the capturing and bubbling states are known bye the useCapture parameter of addEventListener method
+
+eventTarget.addEventListener(type,listener,[,useCapture]);
+By Default useCapture is false. It means it is in the bubbling phase.
+
+var div1 = document.querySelector("#div1");
+var div2 = document.querySelector("#div2");
+
+div1.addEventListener("click", function (event) {
+  alert("you clicked on div 1");
+}, true);
+
+div2.addEventListener("click", function (event) {
+  alert("you clicked on div 2");
+}, false);
+#div1{
+  background-color:red;
+  padding: 24px;
+}
+
+#div2{
+  background-color:green;
+}
+
+Events first are captured down to deepest target, then bubble up. In IE<9 they only bubble.
+All handlers work on bubbling stage excepts addEventListener with last argument true, which is the only way to catch the event on capturing stage.
+Bubbling/capturing can be stopped by event.cancelBubble=true (IE) or event.stopPropagation() for other browsers.
+
+The event.stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed.
+
+
+
+EcmaScript is the standardized scripting language that JavaScript (and some other languages, like ActionScript) implement.  If you think EcmaScript is a terrible name, you’re not alone.  Brendan Eich, the original developer of JavaScript, once wrote that the name EcmaScript sounds like a skin disease.  Naming aside, JavaScript is one of the most important languages in existence today.  Every browser has a JavaScript interpreter, JavaScript on the server is becoming ever more popular, and now it’s possible to use JavaScript for desktop (Chrome Apps), nativish mobile (PhoneGap) and native Windows 8 apps.  A new version of EcmaScript will have a broad impact on web development.
+
+The current version of EcmaScript supported in modern browsers is ES5 (with some ES6 support).  ES5 drives a lot of developers mad.  Folks coming from the backend development space find ES5 lacks some pretty basic language features.  As such, several workarounds have emerged.  TypeScript is very popular in the .NET world (and here at Wintellect) and CoffeeScript is kind of a big deal™ in the Ruby community.  Both TypeScript and CoffeeScript provide syntactic sugar on top of ES5 and then are transcompiled into ES5 compliant JavaScript.  ES6 will tackle many of the core language shortcomings addressed in TypeScript and CoffeeScript.
+
+There are quite a few new features in ES6, many still in draft form.  In this post I’ll cover classes, Arrow Functions, Modules, Block Scoping, and Promises.
+
+Classes
+There are several options to approximate classes in ES5.  The most common approach is probably the special constructor function like this http://jsfiddle.net/noelstieglitz/a5heA/
+
+function Car( make ) { //approximate a class/constructor
+   this.make = make;
+   this.currentSpeed = 25;
+    
+   this.printCurrentSpeed = function(){ //expose a function
+          console.log(this.make + ' is going ' + this.currentSpeed + ' mph.');
+    }
+}
+ 
+// Instantiate a new car
+var moderatelyPricedCar = new Car( "Kia");
+moderatelyPricedCar.printCurrentSpeed(); //Kia is going 25 mph. 
+Approximate no more!  ES6 introduces language support for classes (class keyword), constructors (constructor keyword), and the extend keyword for inheritance.  The developer’s intent is much more clear using the ES6 syntax. http://www.es6fiddle.net/hrut24r0/
+
+class Car {
+    constructor(make) { //constructors!
+        this.make = make;
+      this.currentSpeed = 25;
+    }
+
+    printCurrentSpeed(){
+          console.log(this.make + ' is going ' + this.currentSpeed + ' mph.');
+    }
+}
+
+class RaceCar extends Car { //inheritance
+    constructor(make, topSpeed) {
+        super(make); //call the parent constructor with super
+        this.topSpeed = topSpeed;
+    }
+
+    goFast(){
+          this.currentSpeed = this.topSpeed;
+    }
+}
+
+let stang = new RaceCar('Mustang', 150);
+
+stang.printCurrentSpeed();
+stang.goFast();
+stang.printCurrentSpeed();
+If you love prototypical inheritance, no need to fret.  You can still use prototypical inheritance in ES6.
+
+Arrow Functions
+Many features in ES6 could fundamentally change how new JavaScript applications are architected.  Arrow functions is not going to fundamentally change anything.  Still, it’s one of my favorite features.  Arrow functions provide two features: lexical scoping of the this keyword and less ceremony when defining an anonymous function.
+
+Without arrow functions, every function defines a this value.  No more will you need to reassign this like you have probably done in the next code snippet:
+
+http://jsfiddle.net/noelstieglitz/wfJL5/
+
+function Car() {
+  var self = this; //locally assign this that can be closed over
+  self.speed = 0;
+
+  setInterval(function goFaster() {
+    //this has a different scope, but we can use the self variable to reference the parent "this"
+    self.speed += 5;
+      console.log('now going: ' + self.speed);
+  }, 1000);
+}
+
+var car = new Car();
+The above snippet could be rewritten as
+
+http://www.es6fiddle.net/hrw5xz4f/
+
+function Car() { //Note, we could use the new Class feature in ES6 instead
+  this.speed = 0;
+
+  setInterval(() => {
+    this.speed += 5; //this is from Car
+    console.log
+    console.log('now going: ' + this.speed);
+  }, 1000);
+}
+If you’re a C# developer who has ever used lambda expressions, the syntax will feel very familiar.  Check out the ecmascript.org wiki regarding arrow functions:
+
+Hard to beat C# and CoffeeScript here (we want the unparenthesized single-parameter form as in C#).
+
+TC39 should embrace, clean-up, and extend rather than re-invent or compete with de-facto and nearby de-jure standards.
+
+I can’t agree more.  Here is some ES5 code that will calculate the square of every value in an array and log the value to the console http://jsfiddle.net/noelstieglitz/LLDBp/1/
+
+var x = [0,1,2];
+x.map(function (x) { //anonymous function
+  console.log(x * x);
+});
+In comparison, the ES6 arrow function syntax is really clean http://www.es6fiddle.net/hruu11fz/ 
+
+let x = [0,1,2];
+x.map(x => console.log(x * x)); //arrow function
+Modules
+Modules have the potential to radically change how many JavaScript applications are structured and standardize a best practice in some already modular applications.  Modules in ES6 provide a way to load and manage dependencies via the new import and export keywords.  There are a few good solutions in ES5, namely 3rd party libraries like CommonJS  or node modules.  Modularity is a such an important concept for large applications, that it makes sense to include it as a core language feature.  The goals for ES6 modules are pretty lofty (from the ecmascript wiki, highlight is my own):
+
+Obviate need for globals
+Orthogonality from existing features
+Smooth refactoring from global code to modular code
+Smooth interoperability with existing JS module systems like AMD, CommonJS, and Node.js
+Fast compilation
+Simplicity and usability
+Standardized protocol for sharing libraries
+Compatibility with browser and non-browser environments
+Easy asynchronous external loading
+ 
+
+Read more about modules on Axel’s excellent post.  Here is a code snippet from Axel showing how to load a dependent module:
+
+<module>
+        import $ from 'lib/jquery';
+        var x = 123;
+
+        // The current scope is not global
+        console.log('$' in window); // false
+        console.log('x' in window); // false
+
+        // `this` still refers to the global object
+        console.log(this === window); // true
+</module>
+Block Scoping
+Scoping in JavaScript is confusing for developers with a C/C#/Java background.  Hoisting can add to that confusion.  In ES5, variables are either globally or locally function scoped.  The lack of block scoping has caused confusion in ES5, and resulted in some interesting patterns to achieve block scope.  In ES6, you can use the new let keyword to achieve block scoping. http://www.es6fiddle.net/hrut3qnv/
+
+var num = 0; //globally scoped
+
+for (let i = 0; i < 10; i++) { //i is block scoped
+  num += i;
+  console.log('value of i in block: ' + i);
+}
+
+console.log('Is i defined here?: ' + (typeof i !== 'undefined')); //Is i defined here?: false 
+Promises
+Promises provide a mechanism to handle the results and errors from asynchronous operations.  You can accomplish the same thing with callbacks, but promises provide improved readability via method chaining and succinct error handling.  Promises are currently used in many JavaScript libraries.  RSVP.js, Q.js, and the $q service in Angular are just a few of many examples.  Here is an example from the RSVP.js docs:
+
+getJSON("/api/employee/1").then(function(post) {
+  return getJSON(post.commentURL);
+}).then(function(comments) {  //you could chain multiple then statements
+  // proceed with access to employee
+}).catch(function(error) { //succinct error handling
+  // handle errors in either of the two requests
+});
+You can also wait for all promises to complete:
+
+var promises = [2, 3, 5, 7, 11, 13].map(function(id){
+  return getJSON("/post/" + id + ".json");
+});
+
+RSVP.all(promises).then(function(posts) {
+  // posts contains an array of results for the given promises
+}).catch(function(reason){
+  // if any of the promises fails.
+});
+This pattern will look familiar to those who have written multithreaded C# code (the last example is like the WaitHandle::WaitAll method).  Unfortunately, each library has a slightly different implementation.  It’s confusing to fully grok the Q.js library only to find that the Angular $q service only provides a subset of the same functionality.  ES6 will standardize promises and remove the external dependencies currently required to use promises.  Below is a partial list and description of some of the ES6 promise functionality.  Read more ES6 promises here.
+
+Promise.resolve(value)
+I can’t describe it any better than the Mozilla docs: Returns a Promise object that is resolved with the given value. If the value is a thenable (i.e. has a then method), the returned promise will “follow” that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value.
+
+Promise.cast(value)
+This method is really useful if you are dealing with existing functions or services that don’t return a promise.  If the value passed in is a promise, cast returns the value, otherwise the value is coerced to a promise.  Either way, you can deal with the result as a promise.
+
+Promise.race(iterable)
+Promise.race returns the first promise in the iterable to resolve. Note the use of arrow functions. 🙂
+
+http://www.es6fiddle.net/hruy6vlb/
+
+var p1 = new Promise((resolve, reject) => setTimeout(resolve, 400, "one"));
+var p2 = new Promise((resolve, reject) => setTimeout(resolve, 200, "two"));
+Promise.race([p1, p2]).then(function(value) {
+    console.log(value); //two
+});
+Promise.all(iterable)
+The Promise.all method returns a promise when all promises in the iterable have completed.
+
+http://www.es6fiddle.net/hruyss3j/
+
+var p1 = new Promise((resolve, reject) => setTimeout(resolve, 400, "one"));
+var p2 = new Promise((resolve, reject) => setTimeout(resolve, 200, "two"));
+Promise.all([p1, p2]).then(function(value) {
+    console.log(value); //one, two
+});
+Read more about promises in this fantastic tutorial by Jake Archibald.
+
+Conclusion
+Current support for ES6 is quite limited and a lot of the ES6 spec is still in draft form.  We can look forward to these features (and much more) in the near future, but I wouldn’t recommend using them now.  In the meantime, I recommend using TypeScript (or CoffeeScript, or Traceur, or, etc.) to work around some of the current limitations in ES5.
+
+ // http://www.wintellect.com/devcenter/nstieglitz/5-great-features-in-es6-harmony
