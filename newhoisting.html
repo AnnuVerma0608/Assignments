@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<button onclick="alert('you have clicked on a button')">Click Me!!</button>
+		<script>
+			console.log(a); //
+			var a = 20; // global variables
+			function func1() {
+				b=30;
+				console.log(a);//
+				var a = 40; // local variablesconsole.log(a);//
+				console.log(a);//
+
+			}
+			func1();
+			console.log(a);
+			console.log(b);
+			console.log(func2);
+			console.log(func3)
+			function func2() { // this function will be hoisted
+				console.log('func2 executed')
+			}
+			var func3 = function () { // this varibles is hoisted
+				console.log('func3 executed');
+			};
+		</script>
+	</body>	
+</html>
