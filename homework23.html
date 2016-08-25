@@ -1,0 +1,357 @@
+first-child selector
+ Selects all elements that are the first child of their parent.
+
+ <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>first-child demo</title>
+  <style>
+  span {
+    color: #008;
+  }
+  span.sogreen {
+    color: green;
+    font-weight: bolder;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div>
+  <span>John,</span>
+  <span>Karl,</span>
+  <span>Brandon</span>
+</div>
+<div>
+<p> hello </p>
+  <span>Glen,</span>
+  <span>Tane,</span>
+  <span>Ralph</span>
+</div>
+ 
+<script>
+$( "div span:first-child" )
+  .css( "text-decoration", "underline" )
+  .hover(function() {
+    $( this ).addClass( "sogreen" );
+  }, function() {
+    $( this ).removeClass( "sogreen" );
+  });
+</script>
+ 
+</body>
+</html>
+
+
+first-of-type selector
+
+Selects all elements that are the first among siblings of the same element name.
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>first-of-type demo</title>
+  <style>
+  span.fot {
+    color: red;
+    font-size: 120%;
+    font-style: italic;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div>
+  <span>Corey,</span>
+  <span>Yehuda,</span>
+  <span>Adam,</span>
+  <span>Todd</span>
+</div>
+<div>
+  <b>Nobody,</b>
+  <span>Jörn,</span>
+  <span>Scott,</span>
+  <span>Timo</span>
+</div>
+ 
+<script>
+$( "span:first-of-type" ).addClass( "fot" );
+</script>
+ 
+</body>
+</html>
+
+
+nth-last-child selector
+Selects all elements that are the nth-child of their parent, counting from the last element to the first.
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>nth-last-child demo</title>
+  <style>
+  div {
+    float: left;
+  }
+  span {
+    color: blue;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div>
+  <ul>
+    <li>John</li>
+    <li>Karl</li>
+    <li>Adam</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Dan</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Dave</li>
+    <li>Rick</li>
+    <li>Timmy</li>
+    <li>Gibson</li>
+  </ul>
+</div>
+<script>
+$( "ul li:nth-last-child(2)" ).append( "<span> - 2nd to last!</span>" );
+</script>
+ 
+</body>
+</html>
+
+only-child selector
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>only-child demo</title>
+  <style>
+  div {
+    width: 100px;
+    height: 80px;
+    margin: 5px;
+    float: left;
+    background: #b9e;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div>
+  <button>Sibling!</button>
+  <button>Sibling!</button>
+</div>
+ 
+<div>
+  <button>Sibling!</button>
+</div>
+ 
+<div>
+  None
+</div>
+ 
+<div>
+  <button>Sibling!</button>
+  <button>Sibling!</button>
+  <button>Sibling!</button>
+</div>
+ 
+<div>
+  <button>Sibling!</button>
+</div>
+ 
+<script>
+$( "div button:only-child" ).text( "Alone" ).css( "border", "2px blue solid" );
+</script>
+ 
+</body>
+</html>
+
+only-of-type selector
+Selects all elements that have no siblings with the same element name.
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>only-of-type demo</title>
+  <style>
+  div {
+    width: 100px;
+    height: 80px;
+    margin: 5px;
+    float: left;
+    background: #b9e;
+  }
+  span {
+    padding: 2px;
+    margin: 3px;
+    line-height: 1.4;
+    border: 1px solid #000;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div>
+  <button>Sibling!</button>
+  <button>Sibling!</button>
+</div>
+ 
+<div>
+  <button>Sibling!</button>
+</div>
+<div>
+  None
+</div>
+ 
+<div>
+  <button>Sibling!</button>
+  <span>Sibling!</span>
+  <span>Sibling!</span>
+</div>
+ 
+<div>
+  <button>Sibling!</button>
+</div>
+ 
+<script>
+  $( "button:only-of-type" ).text( "Alone" ).css( "border", "2px blue solid" );
+</script>
+ 
+</body>
+</html>
+
+contains selector
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>contains demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div>John Resig</div>
+<div>George Martin</div>
+<div>Malcom John Sinclair</div>
+<div>J. Ohn</div>
+ 
+<script>
+$( "div:contains('John')" ).css( "text-decoration", "underline" );
+</script>
+ 
+</body>
+</html>
+
+
+
+empty selector
+
+Select all elements that have no children (including text nodes).
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>empty demo</title>
+  <style>
+  td {
+    text-align: center;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<table border="1">
+  <tr><td>TD #0</td><td></td></tr>
+  <tr><td>TD #2</td><td></td></tr>
+  <tr><td></td><td>TD#5</td></tr>
+</table>
+ 
+<script>
+$( "td:empty" )
+  .text( "Was empty!" )
+  .css( "background", "rgb(255,220,200)" );
+</script>
+ 
+</body>
+</html>
+
+parent selector
+Select all elements that have at least one child node (either an element or text).
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>parent demo</title>
+  <style>
+  td {
+    width: 40px;
+    background: green;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<table border="1">
+  <tr><td>Value 1</td><td></td></tr>
+  <tr><td>Value 2</td><td></td></tr>
+</table>
+ 
+<script>
+$( "td:parent" ).fadeTo( 1500, 0.3 );
+</script>
+ 
+</body>
+</html>
+
+
+button Selector
+Selects all button elements and elements of type button.
+:checkbox Selector
+Selects all elements of type checkbox.
+:checked Selector
+Matches all elements that are checked or selected.
+:disabled Selector
+Selects all elements that are disabled.
+:enabled Selector
+Selects all elements that are enabled.
+:file Selector
+Selects all elements of type file.
+:focus Selector
+Selects element if it is currently focused.
+:image Selector
+Selects all elements of type image.
+
+:input Selector
+Selects all input, textarea, select and button elements.
+
+:password Selector
+Selects all elements of type password.
+
+:radio Selector
