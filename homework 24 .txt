@@ -50,3 +50,126 @@ $( "#list" ).append( "<li><a href='http://newdomain.com'>Item #5</a></li>" );
 If we were to click our newly added item, nothing would happen. This is because of the directly bound event handler that we attached previously. Direct events are only attached to elements at the time the .on() method is called. In this case, since our new anchor did not exist when .on() was called, it does not get the event handler.
 
 link Event Propagation
+
+Understanding how events propagate is an important factor in being able to leverage Event Delegation. Any time one of our anchor tags is clicked, a click event is fired for that anchor, and then bubbles up the DOM tree, triggering each of its parent click event handlers:
+
+<a>
+<li>
+<ul #list>
+<div #container>
+<body>
+<html>
+document root
+This means that anytime you click one of our bound anchor tags, you are effectively clicking the entire document body! This is called event bubbling or event propagation.
+
+Since we know how events bubble, we can create a delegated event:
+
+1
+2
+3
+4
+5
+// Attach a delegated event handler
+$( "#list" ).on( "click", "a", function( event ) {
+    event.preventDefault();
+    console.log( $( this ).text() );
+});
+Notice how we have moved the a part from the selector to the second parameter position of the .on() method. This second, selector parameter tells the handler to listen for the specified event, and when it hears it, check to see if the triggering element for that event matches the second parameter. In this case, the triggering event is our anchor tag, which matches that parameter. Since it matches, our anonymous function will execute. We have now attached a single click event listener to our <ul> that will listen for clicks on its descendant anchors, instead of attaching an unknown number of directly bound events to the existing anchor tags only.
+
+link Using the Triggering Element
+
+What if we wanted to open the link in a new window if that link is an external one (as denoted here by beginning with "http")?
+
+1
+2
+3
+4
+5
+6
+7
+// Attach a delegated event handler
+$( "#list" ).on( "click", "a", function( event ) {
+    var elem = $( this );
+    if ( elem.is( "[href^='http']" ) ) {
+        elem.attr( "target", "_blank" );
+    }
+});
+This simply passes the .is() method a selector to see if the href attribute of the element starts with "http". We have also removed the event.preventDefault(); statement as we want the default action to happen (which is to follow the href).
+
+We can actually simplify our code by allowing the selector parameter of .on() do our logic for us:
+
+1
+2
+3
+4
+// Attach a delegated event handler with a more refined selector
+$( "#list" ).on( "click", "a[href^='http']", function( event ) {
+    $( this ).attr( "target", "_blank" );
+});
+link Summary
+Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
+
+
+
+
+
+2.  http://elijahmanor.com/differences-between-jquery-bind-vs-live-vs-delegate-vs-on/ (all the three differences )
+
+
+Using the Bind Method
+The .bind() method registers the type of event and an event handler directly to the DOM element in question. This method has been around the longest and in its day it was a nice abstraction around the various cross-browser issues that existed. This method is still very handy when wiring-up event handlers, but there are various performance concerns as are listed below.
+
+/* The .bind() method attaches the event handler directly to the DOM 
+   element in question ( "#members li a" ). The .click() method is 
+   just a shorthand way to write the .bind() method. */
+
+$( "#members li a" ).bind( "click", function( e ) {} ); 
+$( "#members li a" ).click( function( e ) {} ); 
+view rawbind.js hosted with ❤ by GitHub
+The .bind() method will attach the event handler to all of the anchors that are matched! That is not good. Not only is that expensive to implicitly iterate over all of those items to attach an event handler, but it is also wasteful since it is the same event handler over and over again.
+
+
+The .live() method uses the concept of event delegation to perform its so called “magic”. The way you call .live() looks just like how you might call .bind(), which is very convenient. However, under the covers this method works much different. The .live method attaches the event handler to the root level document along with the associated selector and event information. By registering this information on the document it allows one event handler to be used for all events that have bubbled (a.k.a. delegated, propagated) up to it. Once an event has bubbled up to the document jQuery looks at the selector/event metadata to determine which handler it should invoke, if any. This extra work has some impact on performance at the point of user interaction, but the initial register process is fairly speedy.
+
+$( "#members li a" ).live( "click", function( e ) {} );
+
+
+The .delegate() method behaves in a similar fashion to the .live() method, but instead of attaching the selector/event information to the document, you can choose where it is anchored. Just like the .live() method, this technique uses event delegation to work correctly.
+
+If you skipped over the explanation of the .live() method you might want to go back up and read it as I described some of the internal logic that happen.
+/* The .delegate() method behaves in a similar fashion to the .live() 
+   method, but instead of attaching the event handler to the document, 
+   you can choose where it is anchored ( "#members" ). The selector 
+   and event information ( "li a" & "click" ) will be attached to the 
+   "#members" element. */
+
+$( "#members" ).delegate( "li a", "click", function( e ) {} );
+view rawdelegate.js hosted with ❤ by GitHub
+The .delegate() method is very powerful. The above code will attach the event handler to the unordered list (“#members”) along with the selector/event information. This is much more efficient than the .live() method that always attaches the information to the document. In addition a lot of other problematic issues were resolved by introducing the .delegate() method. See the following outline for a detailed list.
+
+ the jQuery .bind(), .live(), and .delegate() methods are just one line pass throughs to the new jQuery 1.7 .on() method? The same is true of the .unbind(), .die(), and .undelegate() methods. 
+
+ $( "#members li a" ).on( "click", function( e ) {} ); 
+$( "#members li a" ).bind( "click", function( e ) {} ); 
+
+// Live
+$( document ).on( "click", "#members li a", function( e ) {} ); 
+$( "#members li a" ).live( "click", function( e ) {} );
+
+// Delegate
+$( "#members" ).on( "click", "li a", function( e ) {} ); 
+$( "#members" ).delegate( "li a", "click", function( e ) {} );
+
+3. $(document).ready() means that the DOM of your page is ready to be manipulated.
+
+window.load() is triggered when the whole page (incl. components like CSS and image files) has been completely loaded.
+
+$(document).ready(function(){
+//code here
+});
+The code above is used almost every time when we work with jQuery.
+
+This code is used when we want to initialize our jQuery codes after the DOM is ready.
+
+$(window).load()
+Sometimes you want to manipulate pictures. For example you want to vertically and horizontally align a picture and you need to get the width and height of the picture in order to do that. With $(document).ready() you won’t be able to do that if the visitor doesn’t have the image already loaded, in which case you need to initialize the jquery alignment function when the image finishes loading. That’s where we use $(window).load()
