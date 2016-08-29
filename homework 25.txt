@@ -85,6 +85,25 @@ $.ajax({
 Ajax is a client-side script that communicates to and from a server/database without the need for a postback or a complete page refresh. The best definition I've read for Ajax is “the method of exchanging data with a server, and updating parts of a web page – without reloading the entire page.
 
 
+Create a jQuery Controller
+
+First, you will create the jQuery controller module that will consume the REST service:
+
+public/hello.js
+
+$(document).ready(function() {
+    $.ajax({
+        url: "http://rest-service.guides.spring.io/greeting"
+    }).then(function(data) {
+       $('.greeting-id').append(data.id);
+       $('.greeting-content').append(data.content);
+    });
+});
+This controller module is represented as a simple JavaScript function. It uses jQuery’s $.ajax() method to consume the REST service at http://rest-service.guides.spring.io/greeting. If successful, it will assign the JSON received to data, effectively making it a Greeting model object. The id and content are then appended to the greeting-id and greeting-content DOM elements respectively.
+
+Note the use of the jQuery promise .then(). This directs jQuery to execute the anonymous function when the $.ajax() method completes, passing the data result from the completed AJAX request.
+
+
 What is AJAX?
 AJAX = Asynchronous JavaScript and XML.
 
@@ -97,3 +116,112 @@ What About jQuery and AJAX?
 jQuery provides several methods for AJAX functionality.
 
 With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of your web page!
+
+
+Two commonly used methods for a request-response between a client and server are: GET and POST.
+
+GET - Requests data from a specified resource
+POST - Submits data to be processed to a specified resource
+GET is basically used for just getting (retrieving) some data from the server. Note: The GET method may return cached data.
+
+POST can also be used to get some data from the server. However, the POST method NEVER caches data, and is often used to send data along with the request.
+
+To learn more about GET and POST, and the differences between the two methods, please read our HTTP Methods GET vs POST chapter.
+
+jQuery $.get() Method
+The $.get() method requests data from the server with an HTTP GET request.
+
+Syntax:
+
+$.get(URL,callback);
+The required URL parameter specifies the URL you wish to request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+
+The following example uses the $.get() method to retrieve data from a file on the server:
+
+Example
+$("button").click(function(){
+    $.get("demo_test.asp", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
+
+
+The first parameter of $.get() is the URL we wish to request ("demo_test.asp").
+
+The second parameter is a callback function. The first callback parameter holds the content of the page requested, and the second callback parameter holds the status of the request.
+
+The $.post() method requests data from the server using an HTTP POST request.
+
+Syntax:
+
+$.post(URL,data,callback);
+The required URL parameter specifies the URL you wish to request.
+
+The optional data parameter specifies some data to send along with the request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+
+The following example uses the $.post() method to send some data along with the request:
+
+Example
+$("button").click(function(){
+    $.post("demo_test_post.asp",
+    {
+        name: "Donald Duck",
+        city: "Duckburg"
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
+
+
+What is HTTP?
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers.
+
+HTTP works as a request-response protocol between a client and server.
+
+A web browser may be the client, and an application on a computer that hosts a web site may be the server.
+
+Example: A client (browser) submits an HTTP request to the server; then the server returns a response to the client. The response contains status information about the request and may also contain the requested content.
+
+Two HTTP Request Methods: GET and POST
+Two commonly used methods for a request-response between a client and server are: GET and POST.
+
+GET - Requests data from a specified resource
+POST - Submits data to be processed to a specified resource
+The GET Method
+Note that the query string (name/value pairs) is sent in the URL of a GET request:
+
+/test/demo_form.asp?name1=value1&name2=value2
+Some other notes on GET requests:
+
+GET requests can be cached
+
+
+
+GET requests remain in the browser history
+GET requests can be bookmarked
+GET requests should never be used when dealing with sensitive data
+GET requests have length restrictions
+GET requests should be used only to retrieve data
+
+
+
+The POST Method
+Note that the query string (name/value pairs) is sent in the HTTP message body of a POST request:
+
+POST /test/demo_form.asp HTTP/1.1
+Host: w3schools.com
+name1=value1&name2=value2
+Some other notes on POST requests:
+
+POST requests are never cached
+POST requests do not remain in the browser history
+POST requests cannot be bookmarked
+POST requests have no restrictions on data length
+
+
+
