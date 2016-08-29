@@ -1,0 +1,99 @@
+
+REST stands for REpresentational State Transfer. REST is web standards based architecture and uses HTTP Protocol for data communication. It revolves around resource where every component is a resource and a resource is accessed by a common interface using HTTP standard methods. REST was first introduced by Roy Fielding in 2000.
+
+In REST architecture, a REST Server simply provides access to resources and REST client accesses and presents the resources. Here each resource is identified by URIs/ global IDs. REST uses various representations to represent a resource like text, JSON and XML. Now a days JSON is the most popular format being used in web services.
+
+HTTP Methods
+Following well known HTTP methods are commonly used in REST based architecture.
+
+GET - Provides a read only access to a resource.
+
+PUT - Used to create a new resource.
+
+DELETE - Used to remove a resource.
+
+POST - Used to update a existing resource or create a new resource.
+
+OPTIONS - Used to get the supported operations on a resource.
+
+
+The POST method is used to request that the origin server accept the entity enclosed in the request as a new subordinate of the resource identified by the Request-URI in the Request-Line
+In other words, POST is used to create.
+
+The PUT method requests that the enclosed entity be stored under the supplied Request-URI. If the Request-URI refers to an already existing resource, the enclosed entity SHOULD be considered as a modified version of the one residing on the origin server. If the Request-URI does not point to an existing resource, and that URI is capable of being defined as a new resource by the requesting user agent, the origin server can create the resource with that URI."
+That is, PUT is used to create or update.
+
+
+RESTFul Web Services
+A web service is a collection of open protocols and standards used for exchanging data between applications or systems. Software applications written in various programming languages and running on various platforms can use web services to exchange data over computer networks like the Internet in a manner similar to inter-process communication on a single computer. This interoperability (e.g., between Java and Python, or Windows and Linux applications) is due to the use of open standards.
+
+Web services based on REST Architecture are known as RESTful web services. These web services use HTTP methods to implement the concept of REST architecture. A RESTful web service usually defines a URI, Uniform Resource Identifier a service, provides resource representation such as JSON and set of HTTP Methods.
+
+$.ajax({
+  type: 'GET',
+  url: 'http://rest.learncode.academy/api/johnbob/friends',
+  success: function(data) {
+    console.log("I have friends!", data); //returns all of johnbob's friends
+  }
+});
+
+
+Add a new item: POST /api/:user/:collection
+
+(Collection is created when you post your first item)
+
+$.ajax({
+  type: 'POST',
+  url: 'http://rest.learncode.academy/api/johnbob/friends',
+  data: {name: 'Billy Bob', age: 27},
+  success: function(data) {
+    console.log("Friend added!", data); //the new item is returned with an ID
+  }
+});
+Get a single item: GET /api/:user/:collection/:id
+
+$.ajax({
+  type: 'GET',
+  url: 'http://rest.learncode.academy/api/johnbob/friends/1',
+  success: function(data) {
+    console.log("Here's a friend!", data); //returns friend id#1
+  }
+});
+Update an item with new data: PUT /api/:user/:collection/:id
+
+$.ajax({
+  type: 'PUT',
+  data: {name: 'Billy Bob', age: 28},
+  url: 'http://rest.learncode.academy/api/johnbob/friends/1',
+  success: function() {
+    //no data...just a success (200) status code
+    console.log('Friend Updated Successfully!');
+  }
+});
+Delete an item: DELETE /api/:user/:collection/:id
+
+$.ajax({
+  type: 'DELETE',
+  url: 'http://rest.learncode.academy/api/johnbob/friends/1',
+  success: function() {
+    //no data...just a success (200) status code
+    console.log('Friend Deleted Successfully!');
+  }
+});
+
+
+Ajax is a client-side script that communicates to and from a server/database without the need for a postback or a complete page refresh. The best definition I've read for Ajax is “the method of exchanging data with a server, and updating parts of a web page – without reloading the entire page.
+
+
+What is AJAX?
+AJAX = Asynchronous JavaScript and XML.
+
+In short; AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.
+
+Examples of applications using AJAX: Gmail, Google Maps, Youtube, and Facebook tabs.
+
+You can learn more about AJAX in our AJAX tutorial.
+What About jQuery and AJAX?
+jQuery provides several methods for AJAX functionality.
+
+With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of your web page!

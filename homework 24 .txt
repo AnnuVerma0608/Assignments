@@ -173,3 +173,12 @@ This code is used when we want to initialize our jQuery codes after the DOM is r
 
 $(window).load()
 Sometimes you want to manipulate pictures. For example you want to vertically and horizontally align a picture and you need to get the width and height of the picture in order to do that. With $(document).ready() you won’t be able to do that if the visitor doesn’t have the image already loaded, in which case you need to initialize the jquery alignment function when the image finishes loading. That’s where we use $(window).load()
+
+Subject : UIClass-July-7-2016 Homework 25 <Name>
+1) look what is a rest ful web services ?
+2) how can you consume rest ful web services ?
+3) what is get, put, post and delete http methods?
+4) $.ajax
+5) Please parctice get, put, post and delete method call on url http://rest.learncode.academy/api/johnbob/friends/
+using $.ajax
+upload on to git hub
