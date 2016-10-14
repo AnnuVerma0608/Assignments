@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.js"></script>
+    <script src="mpapp.js"></script>
+    <script src="mpctrl.js"></script>
+</head>
+<body>
+<div ng-controller="myCalc as obj">
+    A<input type="text" ng-model="obj.valA">
+    B<input type="text" ng-model="obj.valB">
+    <h1>Sum={{obj.theSum}}</h1>
+    <button ng-click="obj.addValues()">Click Me!!!</button>
+</div>
+
+</body>
+</html>

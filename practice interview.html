@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="divId" style="border:2px solid blue; ">
+			<span>This is span</span>
+			<p id="paraId" style="border : 2px solid red;">This is para 1</p>
+		</div>
+		<script type="text/javascript">
+			document.getElementById('divId').addEventListener('click', function(event){
+				//event.stopPropagation();
+				alert('you clicked on div')
+			}, false)
+			document.getElementById('paraId').addEventListener('click', function(event){
+				event.stopPropagation(); // do not propagate
+				//event.stopImmediatePropagation();// stop propagate, do not execute any more event handlers
+				alert('you clicked on para ')
+			})
+			document.getElementById('paraId').addEventListener('click', function(event){
+				alert('you clicked on para second time')
+			})
+		</script>
+	</body>
+</html>

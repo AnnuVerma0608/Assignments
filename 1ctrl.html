@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.js"></script>
+
+</head>
+<body>
+<div ng-controller="MyCalc">
+    A<input type="text" ng-model="valA">
+    B<input type="text" ng-model="valB">
+    <h1>Sum={{theSum}}</h1>
+    <button ng-click="addValues()">Click Me!!!</button>
+</div>
+
+<script>
+    //.module is used to create a module if it is used with 2 parameters
+    //1st is the name of module, the second parameter is an array of other modules i.e. Dependency Injection
+    //which can be injected to the current module. e.g. angular.module('app',['modulename',...]);
+    var app = angular.module('app',[]); //setter method
+    //min safe array
+    //A controller is a constructor function.
+    //When you write ng-controller="myCalc" that means it executes var $scope = new myCalc();
+    //The second argument is in-line anonymous function which actually defines members of
+    //controller [constructor]
+    app.controller('MyCalc',function($scope){
+        $scope.valA = 0;
+        $scope.valB=0;
+        $scope.theSum=0;
+
+        $scope.addValues = function(){
+            $scope.theSum = parseInt($scope.valA) + parseInt($scope.valB);
+        }
+    });
+</script>
+
+</body>
+</html>

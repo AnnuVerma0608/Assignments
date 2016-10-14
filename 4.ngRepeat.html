@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+<div ng-init="enos=[1001,1002,1003,1004,1001]">
+    <li ng-repeat="i in enos track by $index">
+        {{i}}
+    </li>
+
+</div>
+</body>
+</html>
+

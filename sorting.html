@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title></title>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <style type="text/css">
+
+table , th, td{
+    border:1px solid black;
+    border-color: black;
+    font-family: arial;
+    border-collapse: collapse;
+
+
+
+}
+table{
+    border-spacing: 10px;
+   
+}
+        
+.asc{
+    width: 0;
+    height: 0;
+    border-left: 5px ;
+    border-right: 5px;
+    border-bottom: 10px solid ;
+    display: inline-block;
+
+}
+
+.desc{
+
+width: 0;
+    height: 0;
+    border-left: 5px ;
+    border-right: 5px;
+    border-bottom: 10px;
+    display: inline-block;
+}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div class="container table-responsive" ng-controller="mySort" ng-model="sortHeader" ng-init="empl=[
+        {eno:1,ename:'First',age:34},
+        {eno:2,ename:'Second',age:25},
+        {eno:3,ename:'Third',age:45},
+        {eno:4,ename:'Fourth',age:21},
+        {eno:5,ename:'Fifth',age:34}
+
+]" >
+    Employee Count = {{empl.length}}
+ <table class="table" width=75 cellspacing="100" cellpadding="20px"  >
+    <thead>
+         <tr>
+       
+         <th ng-click="sortData('eno')"> eNO <div ng-class="getSortedData('eno')"></div> </th>
+         <th ng-click="sortData('ename')"> eName <div ng-class="getSortedData('ename')"></div> </th>
+          <th ng-click="sortData('age')"> Age <div ng-class="getSortedData('age')"></div> </th>
+        
+        
+        </tr>
+  </thead>
+   <tbody>
+        <tr ng-repeat="eobj in empl | orderBy: sortHeader:reverseSort ">
+        <td>{{eobj.eno}}</td>
+         <td>{{eobj.ename}}</td>
+         <td>{{eobj.age}}</td>
+
+        </tr>
+    </tbody>
+    </table>
+
+    
+</div>
+
+<script>
+     var app = angular.module('app',[]);
+    app.controller('mySort',['$scope',function($scope){
+        $scope.sortHeader ="age";
+        $scope.reverseSort = false;
+        $scope.sortData = function(header) {
+        $scope.reverseSort =($scope.sortHeader == header) ? !$scope.reverseSort : false
+        $scope.sortHeader = header;
+
+        }
+        $scope.getSortedData = function(header){
+            if($scope.sortHeader==header){
+                return $scope.reverseSort;
+               
+            }
+            
+       }
+
+    }]);
+</script>
+</body>
+</html>

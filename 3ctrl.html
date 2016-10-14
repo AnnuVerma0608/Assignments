@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+<div ng-controller="MyCalc">
+    A<input type="text" ng-model="valA">
+    B<input type="text" ng-model="valB">
+    <h1>Total={{theSum}}</h1>
+    <button ng-click="addValues()">Click Me!!!</button>
+</div>
+<script>
+    //.module is used to create a module if it is used with 2 parameters
+    //1st is the name of module, the second parameter is an array of other modules
+    //which can injected to the current module.
+    var app = angular.module('app',[]);
+    //min safe array
+    app.controller('MyCalc',['$scope',MyCalc]);
+    //trying the function separately rather than inline-anonymous function.
+    function MyCalc($scope){
+        $scope.valA = 0;
+        $scope.valB=0;
+        $scope.theSum=0;
+
+        $scope.addValues = function(){
+            $scope.theSum = parseInt($scope.valA) + parseInt($scope.valB);
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html ng-app=""><head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-init="empl=[
+        {eno:1,ename:'First',age:34},
+        {eno:2,ename:'Second',age:25},
+        {eno:3,ename:'Third',age:45},
+        {eno:4,ename:'Fourth',age:21},
+        {eno:5,ename:'Fifth',age:34}
+
+]">
+    Employee Count = {{empl.length}}
+
+    <li ng-repeat="eobj in empl track by $index">
+        Employee number of {{eobj.ename}} is {{eobj.eno}} and is {{eobj.age}} years old
+    </li>
+
+</div>
+
+</body></html>
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!--Libraries-->
+    <script src="../../lib/angular.js"></script>
+
+    <!--Modules-->
+    <script src="app.js"></script>
+
+    <!--Controllers-->
+    <script src="mycalc.js"></script>
+
+    <!--Services-->
+
+</head>
+<body>
+<div ng-controller="MyCalc as vm"> <!--Controller As Syntax -->
+    A<input type="text" ng-model="vm.valA">
+    B<input type="text" ng-model="vm.valB">
+    <h1>New Total={{vm.theSum}}</h1>
+    <button ng-click="vm.addValues()">Click Me!!!</button>
+
+
+
+</div>
+
+</body>
+</html>

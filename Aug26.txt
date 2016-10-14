@@ -1,0 +1,35 @@
+angularjs.org - download angular.js
+
+Angular is JS framework. It supports MVC - Model View Controller. MVW or MV* - Model - View - Whatever or M-V-VM
+
+Model - relation with database - configuring the data fields
+
+View - html files/templating engine files[handlebar, moustache, jade, ejs] - user interface
+
+controller - is a program which handles the view. It's glue between view and model[ DOM - manipulation]
+===================================
+1.To start angular app, you have to write ng-app. ng-app is a directive which is used to
+bootstrap [loading] angular application.
+
+2.You can write ng-app with html, body or even div.
+3.{{}} are called as angular expression. You can write any angular expression  within the {{}}.
+
+The term directive is actually related to views.
+
+ng-model - is used to give an identification to a control.
+
+Angular supports 2-way data binding.
+It means any change in the view is reflected to the code/controller and vice versa.
+
+ng-show - if model returns true then it will display the element otherwise it will hide.
+
+ng-init - this directive is used to initialize model
+
+ng-repeat - is to repeat - loop through a collection of values
+
+Self - Reading
+--------------------------------------------
+ng-app - Bootstrapping the Anuglar application.
+ng-show
+ng-hide
+
